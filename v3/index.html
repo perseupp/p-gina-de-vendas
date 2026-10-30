@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desperta | Descubra o padrão que trava a sua vida</title>
+<meta name="description" content="Desperta: 3 horas ao vivo com Rogério Dias, todo sábado das 9h às 12h. 4 atividades práticas e o Caderno do Motorista. Ingresso R$ 47.">
+<meta property="og:title" content="Desperta · Descubra o padrão que trava a sua vida">
+<meta property="og:description" content="3 horas ao vivo no Google Meet, todo sábado das 9h às 12h. Ingresso R$ 47.">
+<meta property="og:image" content="https://eurogeriodias.com.br/img/rogerio.webp">
+<meta name="theme-color" content="#FAF7F1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+<!-- ============ INTEGRAÇÕES (iguais à página principal) ============ -->
+<script>
+  window.DESPERTA = {
+    checkoutUrl: "https://pay.kiwify.com.br/EcQUOtb",
+    metaPixelId: "1101252145658588",
+    webhookUrl: "https://marinehedgehog-n8n.cloudfy.live/webhook/desperta-lead",
+    versao: "v3-baldan"
+  };
+</script>
+<script>
+  (function(){
+    var id = window.DESPERTA.metaPixelId;
+    if(!id) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', id);
+    fbq('track', 'PageView');
+  })();
+</script>
+
+<style>
+:root{
+  --paper:#FAF7F1;
+  --paper-2:#F2ECE0;
+  --white:#FFFFFF;
+  --ink:#1A1814;
+  --text:#34302A;
+  --muted:#6E675B;
+  --line:#E2D8C5;
+  --gold:#C99A44;
+  --gold-dk:#8A6420;
+  --gold-hi:#E2BC6E;
+  --night:#17150F;
+  --night-2:#221F18;
+  --display:'Oswald',sans-serif;
+  --body:'Lato',sans-serif;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;margin:0;color:var(--ink);letter-spacing:.2px}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media(min-width:760px){.wrap{padding:0 40px}}
+.fold{padding:76px 0}
+@media(min-width:960px){.fold{padding:112px 0}}
+.kicker{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:13px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold-dk)}
+.kicker::before{content:"";width:28px;height:1.5px;background:var(--gold)}
+.h2{font-size:clamp(30px,5vw,48px);margin-top:16px;max-width:820px}
+.sub{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:640px;margin-top:16px}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* Botão */
+.btn{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:58px;padding:14px 30px;border:0;border-radius:10px;background:var(--ink);color:#fff;font-family:var(--display);font-size:18px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:transform .15s,background .15s;text-align:center}
+.btn small{font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.3px;text-transform:none;color:var(--gold-hi)}
+.btn:hover{background:#000;transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.gold small{color:var(--ink);opacity:.75}
+.btn.gold:hover{background:var(--gold-hi)}
+.fine{font-size:13px;color:var(--muted);margin-top:12px}
+
+/* Topo */
+.top{border-bottom:1px solid var(--line);background:var(--white)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.top img{height:38px;width:auto}
+.top .next{font-size:13px;color:var(--muted);text-align:right;line-height:1.35}
+.top .next b{color:var(--ink);font-family:var(--display);font-weight:500;letter-spacing:.5px}
+
+/* 1 · Promessa */
+.hero{padding:44px 0 72px;background:linear-gradient(180deg,var(--white),var(--paper))}
+.hero .wrap{display:grid;gap:40px;align-items:center}
+@media(min-width:960px){.hero{padding:72px 0 104px}.hero .wrap{grid-template-columns:1.12fr .88fr;gap:64px}}
+.hero h1{font-size:clamp(34px,5.6vw,60px);margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--gold-dk)}
+.hero .sub{margin-top:20px}
+.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:28px 0}
+@media(min-width:560px){.meta{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.meta div{background:var(--white);padding:12px 14px}
+.meta span{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.meta b{font-family:var(--display);font-weight:500;font-size:18px;color:var(--ink)}
+.portrait{position:relative;max-width:440px;margin:0 auto;width:100%}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;border-radius:22px}
+.dial-card{position:absolute;left:-14px;bottom:24px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:14px 16px 12px;box-shadow:0 16px 36px -18px rgba(0,0,0,.35);width:200px}
+@media(max-width:520px){.dial-card{left:8px;bottom:8px;width:172px;padding:10px 12px}}
+.dial-card .lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.dial-card .q{font-size:12px;color:var(--ink);font-weight:700;line-height:1.3;margin-top:2px}
+.portrait .name{position:absolute;right:16px;top:16px;background:rgba(26,24,20,.78);color:#fff;border-radius:100px;padding:6px 14px;font-size:13px;backdrop-filter:blur(4px)}
+
+/* 2 · Caminho */
+.path{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gauges{display:grid;gap:18px;margin-top:44px}
+@media(min-width:900px){.gauges{grid-template-columns:repeat(3,1fr);gap:24px}}
+.gauge{border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;background:var(--paper)}
+.gauge svg{width:92px;height:56px}
+.gauge .n{font-family:var(--display);font-size:13px;letter-spacing:2.5px;color:var(--gold-dk);text-transform:uppercase;margin-top:12px}
+.gauge h3{font-size:26px;margin-top:6px}
+.gauge p{color:var(--muted);margin-top:8px;font-size:16px}
+.gauge .out{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:15px;color:var(--ink)}
+.gauge .out b{font-family:var(--display);font-weight:500;letter-spacing:1.5px;text-transform:uppercase;font-size:12px;color:var(--gold-dk);display:block}
+
+/* 3 · Identificação */
+.mirror{background:var(--night);color:#E9E3D6}
+.mirror .kicker{color:var(--gold-hi)}
+.mirror .h2{color:#fff}
+.lines{margin-top:40px;display:grid;gap:0;border-top:1px solid #36312A}
+.lines p{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,32px);line-height:1.25;color:#fff;padding:22px 0;border-bottom:1px solid #36312A;display:flex;gap:18px}
+.lines p span{font-size:14px;color:var(--gold-hi);letter-spacing:2px;padding-top:8px;flex:none}
+.mirror .turn{margin-top:36px;font-size:19px;max-width:720px}
+.mirror .turn strong{color:var(--gold-hi)}
+
+/* 4 · Conteúdo */
+.content .grid{display:grid;gap:40px;margin-top:48px}
+@media(min-width:960px){.content .grid{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}}
+.carro{border-radius:var(--r);background:var(--white);border:1px solid var(--line);padding:28px}
+.carro h3{font-size:24px}
+.carro .row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:10px;overflow:hidden;margin-top:18px}
+.carro .row div{background:var(--paper);padding:16px}
+.carro .row div:last-child{background:var(--ink);color:#F2EEE6}
+.carro .row b{display:block;font-family:var(--display);font-weight:500;letter-spacing:1.5px;text-transform:uppercase;font-size:13px;color:var(--gold-dk)}
+.carro .row div:last-child b{color:var(--gold-hi)}
+.carro .row span{font-size:15px}
+.carro blockquote{margin:20px 0 0;font-family:var(--display);font-weight:400;font-size:21px;line-height:1.3;color:var(--ink)}
+.acts{display:grid;gap:14px}
+.act{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;padding:20px 0;border-bottom:1px solid var(--line)}
+.act:first-child{padding-top:0}
+.act .num{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;color:var(--gold-dk)}
+.act h3{font-size:22px}
+.act .tag{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.act p{margin-top:8px;font-size:16px}
+
+/* 5 · Cronograma */
+.sched{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tl{margin-top:44px;display:grid;gap:0;max-width:880px}
+.tl div{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+.tl div:last-child{border-bottom:1px solid var(--line)}
+.tl time{font-family:var(--display);font-size:22px;color:var(--gold-dk)}
+.tl h3{font-size:20px}
+.tl p{color:var(--muted);font-size:15px;margin-top:2px}
+@media(max-width:480px){.tl div{grid-template-columns:1fr;gap:2px}}
+
+/* 6 · Provas */
+.proof .grid{display:grid;gap:40px;margin-top:48px;align-items:center}
+@media(min-width:960px){.proof .grid{grid-template-columns:1fr 1fr;gap:64px}}
+.sheets{position:relative;height:380px;max-width:460px;width:100%;margin:0 auto}
+.sheet{position:absolute;width:60%;aspect-ratio:794/1123;background:#fff;box-shadow:0 18px 40px -18px rgba(0,0,0,.35);padding:5%;display:flex}
+.sheet .fr{border:1px solid var(--gold);padding:3px;flex:1;display:flex}
+.sheet .fr>div{border:.5px solid var(--gold);flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:8px;text-align:center}
+.sheet.a{left:0;top:34px;transform:rotate(-5deg)}
+.sheet.b{right:0;top:26px;transform:rotate(4deg)}
+.sheet.c{left:20%;top:0;z-index:2}
+.sheet .tt{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:21px;line-height:.95;color:var(--ink)}
+.sheet .tg{font-family:var(--display);font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-dk)}
+.sheet h4{margin:0;font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:12px;align-self:flex-start;color:var(--ink)}
+.sheet .ln{width:100%;display:grid;gap:9px}
+.sheet .ln i{display:block;height:1px;background:#CFC7B6}
+.sheet .sc{display:flex;gap:3px}
+.sheet .sc i{width:10px;height:10px;border:1px solid #9A9488;border-radius:50%}
+.checklist{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.checklist li{position:relative;padding-left:30px}
+.checklist li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:8px;border-left:2px solid var(--gold-dk);border-bottom:2px solid var(--gold-dk);transform:rotate(-45deg)}
+.honest{margin-top:24px;padding:16px 18px;border-left:3px solid var(--gold);background:var(--white);font-size:15px;color:var(--muted)}
+
+/* 7 · Oferta */
+.offer{background:var(--paper-2)}
+.ticket{max-width:920px;margin:44px auto 0;background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:grid;box-shadow:0 24px 60px -30px rgba(0,0,0,.35)}
+@media(min-width:860px){.ticket{grid-template-columns:1.15fr .85fr}}
+.ticket .inc{padding:30px 26px}
+@media(min-width:860px){.ticket .inc{padding:40px}}
+.ticket .inc h3{font-size:22px}
+.ticket ul{list-style:none;padding:0;margin:18px 0 0}
+.ticket li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:16px}
+.ticket li em{font-style:normal;color:var(--muted);font-size:14px;white-space:nowrap}
+.ticket .pay{background:var(--ink);color:#EDE7DA;padding:34px 26px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative}
+.ticket .pay::before{content:"";position:absolute;left:-1px;top:24px;bottom:24px;border-left:2px dashed #4A443A}
+@media(max-width:859px){.ticket .pay::before{left:24px;right:24px;top:-1px;bottom:auto;border-left:0;border-top:2px dashed var(--line)}}
+.ticket .when{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-hi)}
+.ticket .was{margin-top:16px;color:#A79F91}
+.ticket .was s{color:#C9C0AF}
+.ticket .price{font-family:var(--display);font-weight:600;font-size:76px;line-height:1;color:#fff;margin:4px 0}
+.ticket .price small{font-size:28px;vertical-align:top;margin-right:4px;color:var(--gold-hi)}
+.ticket .how{font-size:14px;color:#A79F91;margin-bottom:22px}
+.ticket .btn{width:100%;max-width:320px}
+.ticket .safe{font-size:12px;color:#A79F91;margin-top:14px}
+
+/* 8 · Autoridade */
+.auth .grid{display:grid;gap:40px;align-items:center}
+@media(min-width:960px){.auth .grid{grid-template-columns:.8fr 1.2fr;gap:64px}}
+.auth img{width:100%;height:auto;max-width:380px;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;border-radius:22px;margin:0 auto}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:22px 0}
+.creds div{background:var(--white);padding:12px 14px;font-size:14px;font-weight:700;color:var(--ink)}
+.story{display:grid;gap:14px}
+.auth blockquote{margin:24px 0 0;font-family:var(--display);font-weight:400;font-size:clamp(20px,2.6vw,26px);line-height:1.3;color:var(--ink);padding-left:18px;border-left:2px solid var(--gold)}
+.auth cite{display:block;font-family:var(--body);font-style:normal;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:10px}
+
+/* 9 · Redução de risco */
+.risk{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fit{display:grid;gap:18px;margin-top:44px}
+@media(min-width:860px){.fit{grid-template-columns:1fr 1fr;gap:24px}}
+.fit .col{border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;background:var(--paper)}
+.fit .col.yes{border-color:var(--gold)}
+.fit h3{font-size:22px}
+.fit ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
+.fit li{position:relative;padding-left:26px;font-size:16px}
+.fit .yes li::before{content:"";position:absolute;left:2px;top:8px;width:12px;height:7px;border-left:2px solid var(--gold-dk);border-bottom:2px solid var(--gold-dk);transform:rotate(-45deg)}
+.fit .no li::before{content:"–";position:absolute;left:4px;top:-1px;color:var(--muted);font-weight:900}
+.assure{display:grid;gap:14px;margin-top:24px}
+@media(min-width:860px){.assure{grid-template-columns:repeat(3,1fr)}}
+.assure div{padding:18px;border-radius:12px;background:var(--paper-2);font-size:15px}
+.assure b{display:block;font-family:var(--display);font-weight:500;font-size:17px;color:var(--ink);margin-bottom:4px}
+
+/* 10 · FAQ */
+.faq{max-width:820px;margin-top:36px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 44px 20px 0;position:relative;font-family:var(--display);font-weight:500;font-size:20px;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:8px;top:14px;font-size:28px;color:var(--gold-dk);font-family:var(--body);font-weight:400}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 20px;color:var(--muted)}
+
+/* 11 · CTA final */
+.final{background:var(--night);color:#E9E3D6;text-align:center}
+.final .kicker{justify-content:center;color:var(--gold-hi)}
+.final .kicker::after{content:"";width:28px;height:1.5px;background:var(--gold)}
+.final h2{color:#fff;font-size:clamp(32px,5.4vw,56px);max-width:820px;margin:16px auto 0}
+.final h2 em{font-style:normal;color:var(--gold-hi)}
+.final p.sub{margin:18px auto 30px;color:#B9B1A2}
+
+footer{background:var(--night-2);color:#A79F91;padding:36px 0 44px;font-size:13px}
+footer .wrap{display:grid;gap:18px;justify-items:center;text-align:center}
+footer img{height:40px;width:auto}
+footer .ig{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+footer a{color:#EDE7DA;text-decoration:none}
+footer a:hover{color:var(--gold-hi)}
+footer p{max-width:720px;line-height:1.6}
+
+/* Popup (mesmo da página principal) */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(26,24,20,.55);backdrop-filter:blur(3px)}
+.modal.open{display:flex}
+.modal-card{position:relative;width:100%;max-width:440px;background:#fff;border:1.5px solid var(--gold);border-radius:16px;padding:30px 22px 24px;max-height:calc(100vh - 32px);overflow:auto}
+@media(min-width:480px){.modal-card{padding:36px 32px 28px}}
+.modal-card .step{font-family:var(--display);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dk)}
+.modal-card h3{font-size:26px;margin:8px 0 6px}
+.modal-card p.m{color:var(--muted);font-size:15px;margin-bottom:20px}
+.close{position:absolute;top:8px;right:8px;width:40px;height:40px;border:0;background:none;color:var(--muted);font-size:26px;cursor:pointer}
+.field{display:grid;gap:6px;margin-bottom:14px;text-align:left}
+.field label{font-size:13px;font-weight:700}
+.field input{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid #D5C9B2;border-radius:8px;padding:14px;width:100%}
+.field input:focus{outline:none;border-color:var(--gold)}
+.field .err{display:none;font-size:13px;color:#B4532F}
+.field.bad input{border-color:#B4532F}.field.bad .err{display:block}
+.modal-card .btn{width:100%;margin-top:6px}
+.privacy{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <img src="../img/logo-ascendere.png" alt="Instituto Ascendere" width="124" height="38">
+    <div class="next">Próxima edição<br><b class="js-next-date">sábado</b> · faltam <b id="cd">—</b></div>
+  </div>
+</div>
+
+<!-- 1 · PROMESSA -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Desperta · Evento online ao vivo</div>
+      <h1>Descubra o padrão que <em>trava a sua vida</em> e saia com a primeira resposta nova escrita no papel</h1>
+      <p class="sub">3 horas ao vivo com Rogério Dias, 4 atividades práticas e o Caderno do Motorista. Para quem já estudou de tudo e continua tropeçando no mesmo lugar.</p>
+      <div class="meta">
+        <div><span>Quando</span><b class="js-next-date">Sábado</b></div>
+        <div><span>Horário</span><b>9h às 12h</b></div>
+        <div><span>Onde</span><b>Google Meet</b></div>
+        <div><span>Ingresso</span><b>R$ 47</b></div>
+      </div>
+      <button class="btn js-open" type="button">Garantir minha vaga<small>Edição de <span class="js-next-date">sábado</span></small></button>
+      <p class="fine">Pagamento seguro pela Kiwify · Pix ou cartão</p>
+    </div>
+    <div class="portrait rv">
+      <img src="../img/rogerio.webp" alt="Rogério Dias, sorrindo, com as mãos entrelaçadas" width="800" height="1000" fetchpriority="high">
+      <div class="name">Rogério Dias</div>
+      <div class="dial-card" aria-hidden="true">
+        <div class="lbl">Termômetro do Volante</div>
+        <svg viewBox="0 0 120 66" width="100%" height="58"><path d="M10 60 A50 50 0 0 1 110 60" fill="none" stroke="#E2D8C5" stroke-width="8" stroke-linecap="round"/><path d="M10 60 A50 50 0 0 1 82 16" fill="none" stroke="#C99A44" stroke-width="8" stroke-linecap="round"/><line x1="60" y1="60" x2="86" y2="26" stroke="#1A1814" stroke-width="3" stroke-linecap="round"/><circle cx="60" cy="60" r="5" fill="#1A1814"/><text x="6" y="66" font-size="8" fill="#6E675B">0</text><text x="106" y="66" font-size="8" fill="#6E675B">10</text></svg>
+        <div class="q">Quem dirige a minha vida: eu ou o que sinto?</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 2 · CAMINHO -->
+<section class="fold path">
+  <div class="wrap">
+    <div class="kicker">O caminho do sábado</div>
+    <h2 class="h2">Três paradas. Cada uma termina com algo escrito por você.</h2>
+    <div class="gauges">
+      <div class="gauge rv">
+        <svg viewBox="0 0 92 56" aria-hidden="true"><path d="M6 50 A40 40 0 0 1 86 50" fill="none" stroke="#E2D8C5" stroke-width="6" stroke-linecap="round"/><path d="M6 50 A40 40 0 0 1 22 18" fill="none" stroke="#C99A44" stroke-width="6" stroke-linecap="round"/><line x1="46" y1="50" x2="24" y2="26" stroke="#1A1814" stroke-width="2.5" stroke-linecap="round"/><circle cx="46" cy="50" r="4" fill="#1A1814"/></svg>
+        <div class="n">Parada 01 · O que acontece</div><h3>Painel de Alerta</h3>
+        <p>As luzes que acendem na sua vida são sinais de um padrão: gatilho, emoção e reação.</p>
+        <div class="out"><b>Você escreve</b>O seu padrão em uma frase.</div>
+      </div>
+      <div class="gauge rv">
+        <svg viewBox="0 0 92 56" aria-hidden="true"><path d="M6 50 A40 40 0 0 1 86 50" fill="none" stroke="#E2D8C5" stroke-width="6" stroke-linecap="round"/><path d="M6 50 A40 40 0 0 1 46 10" fill="none" stroke="#C99A44" stroke-width="6" stroke-linecap="round"/><line x1="46" y1="50" x2="46" y2="18" stroke="#1A1814" stroke-width="2.5" stroke-linecap="round"/><circle cx="46" cy="50" r="4" fill="#1A1814"/></svg>
+        <div class="n">Parada 02 · Por que acontece</div><h3>Caixa-Preta</h3>
+        <p>Todo padrão já foi uma proteção, e toda proteção se apoia numa crença instalada.</p>
+        <div class="out"><b>Você escreve</b>A crença raiz por trás do padrão.</div>
+      </div>
+      <div class="gauge rv">
+        <svg viewBox="0 0 92 56" aria-hidden="true"><path d="M6 50 A40 40 0 0 1 86 50" fill="none" stroke="#E2D8C5" stroke-width="6" stroke-linecap="round"/><path d="M6 50 A40 40 0 0 1 80 30" fill="none" stroke="#C99A44" stroke-width="6" stroke-linecap="round"/><line x1="46" y1="50" x2="72" y2="30" stroke="#1A1814" stroke-width="2.5" stroke-linecap="round"/><circle cx="46" cy="50" r="4" fill="#1A1814"/></svg>
+        <div class="n">Parada 03 · O que fazer diferente</div><h3>Recalibragem</h3>
+        <p>Você reescreve a crença e ensaia a sua resposta nova numa prática guiada.</p>
+        <div class="out"><b>Você escreve</b>A nova resposta e um compromisso de 7 dias.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · IDENTIFICAÇÃO -->
+<section class="fold mirror">
+  <div class="wrap">
+    <div class="kicker">Talvez seja com você</div>
+    <h2 class="h2">Se alguma destas frases já passou pela sua cabeça, o Desperta foi feito para você.</h2>
+    <div class="lines">
+      <p class="rv"><span>01</span>“Eu me esforço tanto e nada muda de verdade.”</p>
+      <p class="rv"><span>02</span>“Eu sei o que preciso fazer, mas não consigo me manter firme.”</p>
+      <p class="rv"><span>03</span>“Toda vez que as coisas começam a dar certo, eu mesmo estrago.”</p>
+      <p class="rv"><span>04</span>“Eu já li, já estudei, já tentei de tudo. O que está faltando?”</p>
+    </div>
+    <p class="turn rv">Não é falta de esforço e não é falta de conhecimento. <strong>É um padrão que dirige por você</strong>, e que você ainda não enxergou.</p>
+  </div>
+</section>
+
+<!-- 4 · CONTEÚDO -->
+<section class="fold content">
+  <div class="wrap">
+    <div class="kicker">O que acontece nas 3 horas</div>
+    <h2 class="h2">Você não vai só assistir. Vai fazer 4 atividades práticas.</h2>
+    <div class="grid">
+      <div class="carro rv">
+        <h3>A ideia que guia o encontro</h3>
+        <div class="row">
+          <div><b>O carro</b><span>Faculdade, pós, cursos, livros. Tudo o que você já estudou.</span></div>
+          <div><b>O motorista</b><span>Como você governa o que sente e decide o caminho.</span></div>
+        </div>
+        <blockquote>“Um profissional é contratado pelo seu conhecimento e demitido pelo seu comportamento.”</blockquote>
+      </div>
+      <div class="acts">
+        <div class="act rv"><div class="num">1</div><div><h3>Termômetro do Volante</h3><div class="tag">Início e fim do encontro</div><p>De 0 a 10: hoje, quem dirige a sua vida é você ou o que você sente? Você mede no começo e de novo no final.</p></div></div>
+        <div class="act rv"><div class="num">2</div><div><h3>Inventário Relâmpago</h3><div class="tag">Painel de Alerta</div><p>Três frases de “eu sei que preciso, mas não faço porque” revelam o que se repete. Você termina com o seu padrão em uma frase.</p></div></div>
+        <div class="act rv"><div class="num">3</div><div><h3>Abrindo a Caixa-Preta</h3><div class="tag">Em trio</div><p>Com tempo para cada um, você descobre o que o padrão tenta proteger e quando ele surgiu. Quem escuta não aconselha, só escuta.</p></div></div>
+        <div class="act rv"><div class="num">4</div><div><h3>Ensaio do Novo Motorista</h3><div class="tag">Prática guiada pelo Rogério</div><p>Você se vê escolhendo a resposta nova diante do gatilho, marca esse estado e escreve o seu compromisso de 7 dias.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · CRONOGRAMA -->
+<section class="fold sched">
+  <div class="wrap">
+    <div class="kicker">Cronograma</div>
+    <h2 class="h2">Das 9h ao meio-dia, sem enrolação.</h2>
+    <div class="tl">
+      <div class="rv"><time>09:00</time><section><h3>O carro e o motorista</h3><p>Boas-vindas, a história do Rogério e o seu Termômetro inicial.</p></section></div>
+      <div class="rv"><time>09:20</time><section><h3>Painel de Alerta</h3><p>Os sinais da sua vida e o Inventário Relâmpago.</p></section></div>
+      <div class="rv"><time>10:00</time><section><h3>Pausa</h3><p>Cinco minutos para respirar.</p></section></div>
+      <div class="rv"><time>10:05</time><section><h3>Caixa-Preta</h3><p>A crença raiz por trás do padrão, com a atividade em trio.</p></section></div>
+      <div class="rv"><time>10:40</time><section><h3>Recalibragem</h3><p>Nova crença, nova resposta e o Ensaio do Novo Motorista.</p></section></div>
+      <div class="rv"><time>11:15</time><section><h3>Termômetro final e próximo passo</h3><p>Você mede de novo, conhece o caminho para continuar e tira as suas dúvidas.</p></section></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · PROVAS -->
+<section class="fold proof">
+  <div class="wrap">
+    <div class="kicker">O que você leva</div>
+    <h2 class="h2">A prova não é uma promessa. É o que fica escrito no seu caderno.</h2>
+    <div class="grid">
+      <div class="sheets rv" aria-hidden="true">
+        <div class="sheet a"><div class="fr"><div><h4>Inventário relâmpago</h4><div class="ln"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div></div>
+        <div class="sheet b"><div class="fr"><div><h4>Termômetro</h4><div class="sc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ln"><i></i><i></i><i></i></div></div></div></div>
+        <div class="sheet c"><div class="fr"><div>
+          <svg width="38" height="38" viewBox="0 0 230 230"><circle cx="115" cy="115" r="104" fill="none" stroke="#C99A44" stroke-width="10"/><circle cx="115" cy="115" r="22" fill="none" stroke="#C99A44" stroke-width="10"/><line x1="93" y1="115" x2="12" y2="115" stroke="#C99A44" stroke-width="10"/><line x1="137" y1="115" x2="218" y2="115" stroke="#C99A44" stroke-width="10"/><line x1="115" y1="137" x2="115" y2="218" stroke="#C99A44" stroke-width="10"/></svg>
+          <div class="tg">Desperta · Assuma o Volante</div><div class="tt">Caderno do<br>Motorista</div>
+        </div></div></div>
+      </div>
+      <div class="rv">
+        <h3 style="font-size:26px">Caderno do Motorista · 8 páginas</h3>
+        <ul class="checklist">
+          <li>O Termômetro do Volante no início e no fim, para você ver a diferença</li>
+          <li>Uma página para cada parada, com a sua atividade</li>
+          <li>O seu padrão, a sua crença raiz e a sua nova resposta</li>
+          <li>“Meus 7 dias ao volante”: o registro da semana seguinte</li>
+        </ul>
+        <p class="honest">O Desperta está nas suas primeiras edições, por isso esta página ainda não mostra depoimentos. Em vez de prometer, mostramos o que você vai produzir com as suas próprias mãos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · OFERTA -->
+<section class="fold offer" id="oferta">
+  <div class="wrap">
+    <div class="kicker">Ingresso</div>
+    <h2 class="h2">Tudo o que está incluso no seu sábado.</h2>
+    <div class="ticket rv">
+      <div class="inc">
+        <h3>Desperta · edição de <span class="js-next-date">sábado</span></h3>
+        <ul>
+          <li><span>3 horas ao vivo com o Rogério, no Google Meet</span><em>9h às 12h</em></li>
+          <li><span>As 3 paradas do Método Assuma o Volante</span><em>incluso</em></li>
+          <li><span>4 atividades práticas, com prática guiada</span><em>incluso</em></li>
+          <li><span>Caderno do Motorista, 8 páginas</span><em>incluso</em></li>
+          <li><span>Grupo da sua edição no WhatsApp</span><em>incluso</em></li>
+        </ul>
+      </div>
+      <div class="pay">
+        <div class="when">Vaga para <span class="js-next-date">sábado</span></div>
+        <p class="was">Valor do encontro: <s>R$ 497</s></p>
+        <div class="price"><small>R$</small>47</div>
+        <p class="how">à vista no Pix ou parcelado no cartão</p>
+        <button class="btn gold js-open" type="button">Garantir minha vaga</button>
+        <p class="safe">🔒 Pagamento seguro pela Kiwify</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · AUTORIDADE -->
+<section class="fold auth">
+  <div class="wrap">
+    <div class="grid">
+      <img class="rv" src="../img/rogerio.webp" alt="Retrato de Rogério Dias" width="800" height="1066" loading="lazy">
+      <div class="rv">
+        <div class="kicker">Quem conduz</div>
+        <h2 class="h2">Rogério Dias</h2>
+        <div class="creds">
+          <div>Treinador Comportamental</div>
+          <div>Trainer em PNL</div>
+          <div>Pós-graduado em Neurociência e Mediação de Conflitos</div>
+          <div>CEO do Instituto Ascendere</div>
+        </div>
+        <div class="story">
+          <p>Eu sabia o que precisava fazer, mas não conseguia sustentar nada. Perdi empregos e perdi o meu casamento. O fundo do poço foi ser flagrado dormindo na mesa de trabalho e demitido pelo vice-presidente da empresa.</p>
+          <p>Foi aí que fui estudar neurociência, PNL e hipnose para entender as minhas próprias emoções. A vida ainda me atinge. A diferença é que hoje um impacto não vira mais um bloqueio.</p>
+        </div>
+        <blockquote>“Se algo que aconteceu fora de mim instalou esse sofrimento dentro de mim, então isso também pode ser desinstalado.”<cite>A pergunta que mudou tudo</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · REDUÇÃO DE RISCO -->
+<section class="fold risk">
+  <div class="wrap">
+    <div class="kicker">Antes de decidir</div>
+    <h2 class="h2">O Desperta não é para todo mundo. Veja se é para você.</h2>
+    <div class="fit">
+      <div class="col yes rv"><h3>É para quem</h3><ul>
+        <li>Trabalha muito, mas não vê a vida prosperar na mesma proporção</li>
+        <li>Está disposto a olhar para dentro, mesmo que doa</li>
+        <li>Quer decidir e agir com firmeza, sem sabotar o próprio progresso</li>
+        <li>Busca prosperar em várias áreas da vida, não só na financeira</li>
+      </ul></div>
+      <div class="col no rv"><h3>Não é para quem</h3><ul>
+        <li>Busca fórmula mágica sem se comprometer a aplicar</li>
+        <li>Não está disposto a olhar para si mesmo</li>
+        <li>Quer só teoria, sem estar aberto a mudar de fato</li>
+      </ul></div>
+    </div>
+    <div class="assure">
+      <div class="rv"><b>Você só compartilha o que quiser</b>As atividades são escritas no seu caderno. Ninguém lê além de você.</div>
+      <div class="rv"><b>Não é terapia</b>É um trabalho comportamental e não substitui tratamento de saúde. Se você faz acompanhamento, mantenha.</div>
+      <div class="rv"><b>Sem surpresa no final</b>Nos minutos finais, o Rogério apresenta a mentoria Governo de Si. Sem obrigação.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · FAQ -->
+<section class="fold">
+  <div class="wrap">
+    <div class="kicker">Dúvidas</div>
+    <h2 class="h2">Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Como recebo o acesso?</summary><p>Assim que o pagamento é confirmado, você recebe no WhatsApp o link do grupo da sua edição. Na sexta à noite chegam o Caderno do Motorista e o link do encontro, e no sábado você recebe lembretes antes de começar.</p></details>
+      <details><summary>Preciso imprimir o caderno?</summary><p>É o ideal, porque escrever à mão fixa o que você descobre. Se não puder, deixe o PDF aberto ao lado da tela e use um caderno comum.</p></details>
+      <details><summary>Preciso abrir a câmera?</summary><p>É recomendado, porque tem uma atividade em trio. Mas você só compartilha o que quiser, quando quiser.</p></details>
+      <details><summary>Funciona para a minha profissão?</summary><p>O Desperta trabalha o padrão de comportamento, não uma técnica de área. Ele serve para profissionais CLT e empresários de qualquer setor.</p></details>
+      <details><summary>Quais as formas de pagamento?</summary><p>Pix ou cartão de crédito, com opção de parcelamento, pela Kiwify. Os dados do seu cartão não passam por nós.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · CTA FINAL -->
+<section class="fold final">
+  <div class="wrap">
+    <div class="kicker">Neste sábado, às 9h</div>
+    <h2>Uma manhã para enxergar <em>quem está ao volante.</em></h2>
+    <p class="sub">3 horas ao vivo, 4 atividades práticas e o Caderno do Motorista, por R$&nbsp;47.</p>
+    <button class="btn gold js-open" type="button">Garantir minha vaga<small>Edição de <span class="js-next-date">sábado</span></small></button>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="../img/logo-ascendere.png" alt="Instituto Ascendere" width="130" height="40" loading="lazy">
+    <div class="ig"><a href="https://www.instagram.com/eu.rogerio.dias/" target="_blank" rel="noopener">@eu.rogerio.dias</a><a href="https://www.instagram.com/instituto.ascendere/" target="_blank" rel="noopener">@instituto.ascendere</a></div>
+    <p>O Desperta é um trabalho de desenvolvimento comportamental e não substitui acompanhamento médico ou psicológico. Os resultados dependem da aplicação de cada participante. © <span id="yr">2026</span> Instituto Ascendere.</p>
+  </div>
+</footer>
+
+<!-- POPUP DE CAPTURA -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-card">
+    <button class="close" type="button" aria-label="Fechar">×</button>
+    <div class="step">Passo 1 de 2</div>
+    <h3 id="mTitle">Para onde enviamos o seu acesso?</h3>
+    <p class="m">O link do encontro e o Caderno do Motorista chegam por e-mail e WhatsApp.</p>
+    <form id="leadForm" novalidate>
+      <div class="field"><label for="fNome">Nome</label><input id="fNome" name="nome" autocomplete="name" required><span class="err">Digite o seu nome.</span></div>
+      <div class="field"><label for="fEmail">E-mail</label><input id="fEmail" name="email" type="email" autocomplete="email" inputmode="email" required><span class="err">Digite um e-mail válido.</span></div>
+      <div class="field"><label for="fWhats">WhatsApp com DDD</label><input id="fWhats" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required><span class="err">Digite o seu WhatsApp com DDD.</span></div>
+      <button class="btn gold" type="submit" id="fSubmit">Ir para o pagamento</button>
+    </form>
+    <p class="privacy">Seus dados ficam só com o Instituto Ascendere.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var cfg = window.DESPERTA;
+
+  function nextEdition(){
+    var now = new Date();
+    var br = new Date(now.getTime() - 3*3600*1000);
+    var diff = (6 - br.getUTCDay() + 7) % 7;
+    var t = Date.UTC(br.getUTCFullYear(), br.getUTCMonth(), br.getUTCDate() + diff, 12, 0, 0);
+    if (t <= now.getTime()) t += 7*24*3600*1000;
+    return new Date(t);
+  }
+  var target = nextEdition();
+  var tBr = new Date(target.getTime() - 3*3600*1000);
+  var label = 'Sábado, ' + String(tBr.getUTCDate()).padStart(2,'0') + '/' + String(tBr.getUTCMonth()+1).padStart(2,'0');
+  document.querySelectorAll('.js-next-date').forEach(function(el){ el.textContent = label; });
+  var yr = document.getElementById('yr'); if (yr) yr.textContent = tBr.getUTCFullYear();
+
+  var cd = document.getElementById('cd');
+  function tick(){
+    var ms = target.getTime() - Date.now();
+    if (ms <= 0){ target = nextEdition(); ms = target.getTime() - Date.now(); }
+    var s = Math.floor(ms/1000), d = Math.floor(s/86400), h = Math.floor(s%86400/3600), m = Math.floor(s%3600/60);
+    cd.textContent = (d ? d + 'd ' : '') + String(h).padStart(2,'0') + 'h ' + String(m).padStart(2,'0') + 'min';
+  }
+  tick(); setInterval(tick, 30000);
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.12});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
+
+  var modal = document.getElementById('modal'), lastFocus = null;
+  function openM(){
+    lastFocus = document.activeElement;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){ document.getElementById('fNome').focus(); }, 50);
+    if (window.fbq) fbq('track','InitiateCheckout');
+  }
+  function closeM(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('.js-open').forEach(function(b){ b.addEventListener('click', openM); });
+  modal.querySelector('.close').addEventListener('click', closeM);
+  modal.addEventListener('click', function(e){ if (e.target === modal) closeM(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) closeM(); });
+
+  var w = document.getElementById('fWhats');
+  w.addEventListener('input', function(){
+    var v = w.value.replace(/\D/g,'').slice(0,11);
+    if (v.length > 6) w.value = '(' + v.slice(0,2) + ') ' + v.slice(2, v.length-4) + '-' + v.slice(-4);
+    else if (v.length > 2) w.value = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    else w.value = v;
+  });
+  function setBad(input, bad){ input.parentElement.classList.toggle('bad', bad); }
+
+  function checkoutWithUtms(){
+    var url = new URL(cfg.checkoutUrl);
+    var p = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){
+      if (p.get(k)) url.searchParams.set(k, p.get(k));
+    });
+    return url.toString();
+  }
+
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var n = document.getElementById('fNome'), em = document.getElementById('fEmail');
+    var okN = n.value.trim().length >= 2;
+    var okE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim());
+    var okW = w.value.replace(/\D/g,'').length >= 10;
+    setBad(n,!okN); setBad(em,!okE); setBad(w,!okW);
+    if (!(okN && okE && okW)){ (okN ? (okE ? w : em) : n).focus(); return; }
+
+    var btn = document.getElementById('fSubmit');
+    btn.disabled = true; btn.textContent = 'Abrindo o pagamento…';
+
+    var lead = {
+      nome: n.value.trim(),
+      email: em.value.trim().toLowerCase(),
+      whatsapp: w.value.replace(/\D/g,''),
+      edicao: tBr.toISOString().slice(0,10),
+      pagina: location.href,
+      pagina_versao: cfg.versao,
+      enviado_em: new Date().toISOString()
+    };
+    new URLSearchParams(location.search).forEach(function(v,k){ if (k.indexOf('utm_')===0) lead[k]=v; });
+
+    if (window.fbq) fbq('track','Lead');
+
+    var go = function(){ location.href = checkoutWithUtms(); };
+    if (cfg.webhookUrl){
+      var dados = new URLSearchParams();
+      Object.keys(lead).forEach(function(k){ dados.append(k, lead[k]); });
+      var enviado = false;
+      try { enviado = !!(navigator.sendBeacon && navigator.sendBeacon(cfg.webhookUrl, dados)); } catch(err){}
+      if (!enviado){
+        try { fetch(cfg.webhookUrl, {method:'POST', mode:'no-cors', body:dados, keepalive:true}); } catch(err){}
+      }
+      setTimeout(go, 300);
+    } else {
+      go();
+    }
+  });
+})();
+</script>
+</body>
+</html>
