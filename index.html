@@ -21,7 +21,7 @@
     // ID do Pixel da Meta. Deixe "" para desligar.
     metaPixelId: "1101252145658588",
     // URL do webhook (n8n, Make, CRM) que recebe nome, e-mail e WhatsApp antes do checkout. Deixe "" para desligar.
-    webhookUrl: ""
+    webhookUrl: "https://marinehedgehog-n8n.cloudfy.live/webhook/desperta-lead"
   };
 </script>
 <script>
@@ -768,12 +768,15 @@ footer .ig a:hover{color:#E2BC6E}
 
     var go = function(){ location.href = checkoutWithUtms(); };
     if (cfg.webhookUrl){
-      var done = false, finish = function(){ if(!done){ done = true; go(); } };
-      try {
-        fetch(cfg.webhookUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(lead), keepalive:true})
-          .then(finish, finish);
-      } catch(err){ finish(); }
-      setTimeout(finish, 1500);
+      // Envio em formulário simples: chega mesmo se a página já estiver indo para o checkout
+      var dados = new URLSearchParams();
+      Object.keys(lead).forEach(function(k){ dados.append(k, lead[k]); });
+      var enviado = false;
+      try { enviado = !!(navigator.sendBeacon && navigator.sendBeacon(cfg.webhookUrl, dados)); } catch(err){}
+      if (!enviado){
+        try { fetch(cfg.webhookUrl, {method:'POST', mode:'no-cors', body:dados, keepalive:true}); } catch(err){}
+      }
+      setTimeout(go, 300);
     } else {
       go();
     }
