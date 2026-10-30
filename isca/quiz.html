@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Passo 2 de 4 · Painel de Alerta</title>
+<meta name="description" content="Quiz do guia Painel de Alerta.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Painel de Alerta · guia gratuito">
+<meta property="og:image" content="https://eurogeriodias.com.br/img/rogerio.webp">
+<meta name="theme-color" content="#FAF7F1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<script>
+window.FI_CONFIG = {
+  webhook: "https://marinehedgehog-n8n.cloudfy.live/webhook/desperta-isca",
+  pixelId: "1101252145658588",
+  agendaLink: "",
+  whatsapp: "5511970585755",
+  materialUrl: "/isca/guia-painel-de-alerta.pdf",
+  despertaUrl: "/",
+  faixaMinimaIdx: 2,
+  urls: { lp: "index.html", quiz: "quiz.html", agenda: "agendamento.html", obrigado: "obrigado.html" }
+};
+</script>
+<script>
+/* FI CORE */
+(function(){
+  var C = window.FI_CONFIG;
+  if (C.pixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', C.pixelId); fbq('track', 'PageView');
+  }
+  var KEY = 'fi_desperta', mem = {};
+  function load(){ try { return JSON.parse(sessionStorage.getItem(KEY) || localStorage.getItem(KEY) || '{}'); } catch(e){ return mem; } }
+  function save(o){ mem = o; var s = JSON.stringify(o); try { sessionStorage.setItem(KEY, s); } catch(e){} try { localStorage.setItem(KEY, s); } catch(e){} }
+  window.fiGet = function(){ var o = load(); var q = new URLSearchParams(location.search); if (!o.nome && q.get('n')) o.nome = q.get('n'); if (!o.gargalo && q.get('g')) o.gargalo = q.get('g'); return o; };
+  window.fiSet = function(patch){ var o = load(); Object.keys(patch).forEach(function(k){ o[k] = patch[k]; }); save(o); return o; };
+  window.fiUtms = function(){ var q = new URLSearchParams(location.search), o = load(), u = o.utm || {};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ if (q.get(k)) u[k] = q.get(k); });
+    o.utm = u; save(o); return u; };
+  window.fiQS = function(extra){ var u = fiUtms(), p = new URLSearchParams(); Object.keys(u).forEach(function(k){ p.set(k, u[k]); });
+    var o = load(); if (o.nome) p.set('n', String(o.nome).split(' ')[0]); if (o.gargalo) p.set('g', o.gargalo);
+    if (extra) Object.keys(extra).forEach(function(k){ p.set(k, extra[k]); }); var s = p.toString(); return s ? '?' + s : ''; };
+  window.fiGo = function(page, extra){ location.href = C.urls[page] + fiQS(extra); };
+  window.fiSend = function(evento, data){ if (!C.webhook) return; var o = load(), d = new URLSearchParams(), u = fiUtms();
+    d.append('evento', evento); d.append('email', o.email || ''); Object.keys(u).forEach(function(k){ d.append(k, u[k]); });
+    Object.keys(data || {}).forEach(function(k){ d.append(k, data[k]); });
+    var ok = false; try { ok = !!(navigator.sendBeacon && navigator.sendBeacon(C.webhook, d)); } catch(e){}
+    if (!ok) { try { fetch(C.webhook, {method:'POST', mode:'no-cors', body:d, keepalive:true}); } catch(e){} } };
+  window.fiTrack = function(ev, params){ if (window.fbq) fbq('track', ev, params || {}); };
+  window.fiPrimeiroNome = function(){ var n = String(load().nome || new URLSearchParams(location.search).get('n') || '').trim().split(/\s+/)[0]; return n ? n.charAt(0).toUpperCase() + n.slice(1).toLowerCase() : ''; };
+  window.fiWhatsLink = function(){ var o = fiGet(), n = fiPrimeiroNome(), t = 'Oi!';
+    if (n) t += ' Sou ' + n + '.'; t += ' Baixei o guia Painel de Alerta.';
+    if (o.gargalo) t += ' O que mais pesa para mim hoje é ' + o.gargalo + '.';
+    return 'https://wa.me/' + C.whatsapp + '?text=' + encodeURIComponent(t); };
+  fiUtms();
+})();
+</script>
+<style>
+:root{
+  --paper:#FAF7F1;--paper-2:#F2ECE0;--white:#FFFFFF;--ink:#1A1814;--text:#34302A;--muted:#6E675B;
+  --line:#E2D8C5;--gold:#C99A44;--gold-dk:#8A6420;--gold-hi:#E2BC6E;--night:#17150F;--green:#1F9D55;
+  --display:'Oswald',sans-serif;--body:'Lato',sans-serif;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;margin:0;color:var(--ink)}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+@media(min-width:760px){.wrap{padding:0 36px}}
+.narrow{max-width:640px;margin:0 auto;padding:0 16px}
+.kicker{font-family:var(--display);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dk)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:14px 26px;border:0;border-radius:10px;background:var(--ink);color:#fff;font-family:var(--display);font-size:18px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;text-decoration:none;text-align:center;transition:transform .15s,background .15s}
+.btn:hover{background:#000;transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--gold-hi)}
+.btn.wa{background:var(--green);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:focus-visible,.opt:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn.full{width:100%}
+.fine{font-size:13px;color:var(--muted)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.stepbar{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.stepbar .bar{flex:1;height:6px;background:var(--line);border-radius:9px;overflow:hidden}
+.stepbar .bar i{display:block;height:100%;background:var(--gold);border-radius:9px;transition:width .3s}
+.top{background:var(--white);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.top img{height:36px;width:auto}
+.opt{display:block;width:100%;text-align:left;background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:10px;font:700 17px/1.35 var(--body);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--gold);background:#FFFDF8}
+.opt small{display:block;font-weight:400;font-size:14px;color:var(--muted);margin-top:2px}
+.field{display:grid;gap:6px;margin-top:14px}
+.field label{font-size:14px;font-weight:700;color:var(--ink)}
+.field input{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid #D5C9B2;border-radius:10px;padding:14px;width:100%}
+.field input:focus{outline:none;border-color:var(--gold)}
+.field .err{display:none;font-size:13px;color:#B4532F}
+.field.bad input{border-color:#B4532F}.field.bad .err{display:block}
+.why{font-size:14px;color:var(--muted);margin-top:6px}
+.foot{background:var(--night);color:#A79F91;padding:30px 0 40px;font-size:13px;text-align:center;margin-top:72px}
+.foot a{color:#EDE7DA}
+.fine a{color:var(--muted)}
+
+.q{padding-top:30px;padding-bottom:40px}
+.q h1{font-size:clamp(26px,4.4vw,36px);margin-top:18px}
+.q .why{font-size:15px}
+.scale{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:16px}
+@media(min-width:520px){.scale{grid-template-columns:repeat(11,1fr)}}
+.scale .opt{text-align:center;padding:14px 0;margin:0;font-family:var(--display);font-size:20px}
+.ends{display:flex;justify-content:space-between;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.anl{text-align:center;padding:60px 0}
+.spin{width:54px;height:54px;border-radius:50%;border:4px solid var(--line);border-top-color:var(--gold);margin:0 auto 20px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.spin{animation:none}}
+
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><img src="/img/logo-ascendere.png" alt="Instituto Ascendere" width="118" height="36"><span class="fine">Passo 2 de 4</span></div></div>
+<main class="narrow q" id="qz"></main>
+<footer class="foot"><div class="wrap">
+<p>Instituto Ascendere · <a href="https://www.instagram.com/eu.rogerio.dias/" target="_blank" rel="noopener">@eu.rogerio.dias</a> · <a href="https://www.instagram.com/instituto.ascendere/" target="_blank" rel="noopener">@instituto.ascendere</a></p>
+<p style="margin-top:8px">Material de desenvolvimento comportamental. Não substitui acompanhamento médico ou psicológico. Seus dados são usados só para entregar o material e falar com você.</p>
+</div></footer>
+
+<script>
+var Q = [
+  {k:'termometro', t:'Hoje, quem dirige a sua vida: você ou o que você sente?', why:'0 é “minhas emoções decidem tudo”. 10 é “eu governo o que sinto”.', escala:true},
+  {k:'gargalo', t:'Onde esse padrão mais te custa hoje?', why:'É isso que vamos olhar com mais atenção no seu caso.', op:['o dinheiro que não sobra','as brigas que se repetem em casa','a constância no trabalho','sustentar o que você conquista','a confiança para decidir']},
+  {k:'tempo', t:'Há quanto tempo isso se repete?', why:'Padrões antigos pedem um caminho diferente de padrões recentes.', op:['Menos de 1 ano','De 1 a 5 anos','Mais de 5 anos','Desde que me lembro']},
+  {k:'tentativas', t:'O que você já tentou para mudar isso?', why:'Para não te indicar o que você já fez.', op:['Cursos e livros','Terapia ou coaching','Força de vontade, sozinho','Ainda não tentei nada']},
+  {k:'urgencia', t:'Quando você quer resolver isso?', why:'Para te mostrar o próximo passo no ritmo certo.', op:['Agora, o quanto antes','Nos próximos 3 meses','Sem pressa']}
+];
+var S = fiGet(), j = 0, A = {};
+if (!S.email) { location.replace(FI_CONFIG.urls.lp + location.search); }
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function draw(){
+  var q = Q[j], m = document.getElementById('qz'), nome = fiPrimeiroNome();
+  var h = '<div class="stepbar"><span>Pergunta ' + (j + 1) + ' de 5</span><span class="bar"><i style="width:' + (100 * j / 5) + '%"></i></span></div>';
+  h += '<h1>' + (j === 0 && nome ? esc(nome) + ', ' + q.t.charAt(0).toLowerCase() + q.t.slice(1) : q.t) + '</h1><p class="why">' + q.why + '</p>';
+  if (q.escala) { h += '<div class="scale">'; for (var n = 0; n <= 10; n++) h += '<button class="opt" type="button" data-v="' + n + '">' + n + '</button>'; h += '</div><div class="ends"><span>O que sinto dirige</span><span>Eu dirijo</span></div>'; }
+  else h += q.op.map(function(o){ return '<button class="opt" type="button" data-v="' + esc(o) + '">' + esc(o.charAt(0).toUpperCase() + o.slice(1)) + '</button>'; }).join('');
+  m.innerHTML = h;
+  m.querySelectorAll('.opt').forEach(function(b){ b.onclick = function(){ A[q.k] = b.getAttribute('data-v'); j++; j < Q.length ? draw() : analisa(); }; });
+  window.scrollTo(0, 0);
+}
+function analisa(){
+  var fit = (+S.faixaIdx || 0) >= FI_CONFIG.faixaMinimaIdx, urg = A.urgencia !== 'Sem pressa';
+  var rota = (fit && urg && FI_CONFIG.agendaLink) ? 'call' : 'desperta';
+  fiSet({ termometro: A.termometro, gargalo: A.gargalo, rota: rota });
+  fiSend('quiz', { termometro: A.termometro, gargalo: A.gargalo, tempo: A.tempo, tentativas: A.tentativas, urgencia: A.urgencia, rota: rota });
+  fiTrack('CompleteRegistration', { content_name: 'Quiz Painel de Alerta' });
+  document.getElementById('qz').innerHTML = '<div class="anl"><div class="spin"></div><h1 style="font-size:26px">Analisando as suas respostas…</h1><p class="why">Montando o próximo passo para destravar ' + esc(A.gargalo) + '.</p></div>';
+  setTimeout(function(){ fiGo('agenda'); }, 2400);
+}
+draw();
+</script>
+</body>
+</html>
