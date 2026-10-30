@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Passo 4 de 4 · Painel de Alerta</title>
-<meta name="description" content="Seu guia Painel de Alerta.">
+<title>Passo 2 de 4 · Painel de Alerta</title>
+<meta name="description" content="Quiz do guia Painel de Alerta.">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Painel de Alerta · guia gratuito">
 <meta property="og:image" content="https://eurogeriodias.com.br/img/rogerio.webp">
@@ -14,11 +14,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <script>
 window.FI_CONFIG = {
-  webhook: "https://marinehedgehog-n8n.cloudfy.live/webhook/desperta-isca",
+  webhook: "https://marinehedgehog-n8n.cloudfy.live/webhook/desperta-guia",
   pixelId: "1101252145658588",
   agendaLink: "",
   whatsapp: "5511970585755",
-  materialUrl: "/isca/guia-painel-de-alerta.pdf",
+  materialUrl: "/painel-de-alerta/guia-painel-de-alerta.pdf",
   despertaUrl: "/",
   faixaMinimaIdx: 2,
   urls: { lp: "index.html", quiz: "quiz.html", agenda: "agendamento.html", obrigado: "obrigado.html" }
@@ -103,44 +103,59 @@ p{margin:0}
 .foot a{color:#EDE7DA}
 .fine a{color:var(--muted)}
 
-.ob{padding-top:30px;padding-bottom:20px}
-.ob h1{font-size:clamp(28px,4.8vw,42px);margin-top:18px}
-.ob .sub{color:var(--muted);margin-top:12px;font-size:18px}
-.wa{margin-top:24px;border:2px solid var(--green);background:#F2FBF5;border-radius:16px;padding:22px}
-.wa h3{font-size:22px}
-.wa p{margin-top:6px;font-size:15px}
-.steps{display:grid;gap:12px;margin-top:22px;counter-reset:s}
-.steps .card{position:relative;padding-left:62px}
-.steps .card::before{counter-increment:s;content:counter(s);position:absolute;left:20px;top:20px;font-family:var(--display);font-size:28px;color:var(--gold);line-height:1}
-.steps h3{font-size:18px;text-transform:uppercase;letter-spacing:.3px}
-.steps p{font-size:15px;color:var(--muted);margin-top:4px}
+.q{padding-top:30px;padding-bottom:40px}
+.q h1{font-size:clamp(26px,4.4vw,36px);margin-top:18px}
+.q .why{font-size:15px}
+.scale{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:16px}
+@media(min-width:520px){.scale{grid-template-columns:repeat(11,1fr)}}
+.scale .opt{text-align:center;padding:14px 0;margin:0;font-family:var(--display);font-size:20px}
+.ends{display:flex;justify-content:space-between;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.anl{text-align:center;padding:60px 0}
+.spin{width:54px;height:54px;border-radius:50%;border:4px solid var(--line);border-top-color:var(--gold);margin:0 auto 20px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.spin{animation:none}}
 
 </style>
 </head>
 <body>
-<div class="top"><div class="wrap"><img src="/img/logo-ascendere.png" alt="Instituto Ascendere" width="118" height="36"><span class="fine">Passo 4 de 4</span></div></div>
-<main class="narrow ob" id="ob"></main>
+<div class="top"><div class="wrap"><img src="/img/logo-ascendere.png" alt="Instituto Ascendere" width="118" height="36"><span class="fine">Passo 2 de 4</span></div></div>
+<main class="narrow q" id="qz"></main>
 <footer class="foot"><div class="wrap">
 <p>Instituto Ascendere · <a href="https://www.instagram.com/eu.rogerio.dias/" target="_blank" rel="noopener">@eu.rogerio.dias</a> · <a href="https://www.instagram.com/instituto.ascendere/" target="_blank" rel="noopener">@instituto.ascendere</a></p>
 <p style="margin-top:8px">Material de desenvolvimento comportamental. Não substitui acompanhamento médico ou psicológico. Seus dados são usados só para entregar o material e falar com você.</p>
 </div></footer>
 
 <script>
-if (window.top !== window.self) { try { window.top.location.href = location.href; } catch(e){} }
-var S = fiGet(), nome = fiPrimeiroNome(), r = new URLSearchParams(location.search).get('r') || 'material';
+var Q = [
+  {k:'termometro', t:'Hoje, quem dirige a sua vida: você ou o que você sente?', why:'0 é “minhas emoções decidem tudo”. 10 é “eu governo o que sinto”.', escala:true},
+  {k:'gargalo', t:'Onde esse padrão mais te custa hoje?', why:'É isso que vamos olhar com mais atenção no seu caso.', op:['o dinheiro que não sobra','as brigas que se repetem em casa','a constância no trabalho','sustentar o que você conquista','a confiança para decidir']},
+  {k:'tempo', t:'Há quanto tempo isso se repete?', why:'Padrões antigos pedem um caminho diferente de padrões recentes.', op:['Menos de 1 ano','De 1 a 5 anos','Mais de 5 anos','Desde que me lembro']},
+  {k:'tentativas', t:'O que você já tentou para mudar isso?', why:'Para não te indicar o que você já fez.', op:['Cursos e livros','Terapia ou coaching','Força de vontade, sozinho','Ainda não tentei nada']},
+  {k:'urgencia', t:'Quando você quer resolver isso?', why:'Para te mostrar o próximo passo no ritmo certo.', op:['Agora, o quanto antes','Nos próximos 3 meses','Sem pressa']}
+];
+var S = fiGet(), j = 0, A = {};
+if (!S.email) { location.replace(FI_CONFIG.urls.lp + location.search); }
 function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
-var h = '<div class="stepbar"><span>Passo 4 de 4</span><span class="bar"><i style="width:100%"></i></span></div>';
-h += r === 'call'
-  ? '<h1>' + (nome ? esc(nome) + ', a' : 'A') + ' sua conversa está marcada</h1><p class="sub">Você recebe a confirmação do horário no e-mail. O guia já está no seu WhatsApp.</p>'
-  : '<h1>' + (nome ? esc(nome) + ', o' : 'O') + ' seu guia está garantido</h1><p class="sub">Ele já está a caminho do seu WhatsApp. Se preferir, baixe agora.</p>';
-h += '<div class="wa"><h3>Salve o nosso contato no WhatsApp</h3><p>É por lá que chegam o guia e os próximos passos. Mande um oi para garantir que as mensagens não caiam na caixa de desconhecidos.</p>'
-  + '<p style="margin-top:14px"><a class="btn wa full" id="waBtn" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a></p></div>';
-h += '<p style="margin-top:18px"><a class="btn gold full" href="' + FI_CONFIG.materialUrl + '" target="_blank" rel="noopener">Baixar o guia agora</a></p>';
-h += '<div class="steps"><div class="card"><h3>Reserve 15 minutos</h3><p>Sem interrupção, com o guia impresso ou aberto ao lado.</p></div>'
-  + '<div class="card"><h3>Faça os exercícios na ordem</h3><p>Primeiro o Termômetro, depois o Inventário Relâmpago.</p></div>'
-  + '<div class="card"><h3>Me conte a sua nota</h3><p>Responda a mensagem no WhatsApp com a nota que você deu no Termômetro.</p></div></div>';
-document.getElementById('ob').innerHTML = h;
-document.getElementById('waBtn').href = fiWhatsLink();
+function draw(){
+  var q = Q[j], m = document.getElementById('qz'), nome = fiPrimeiroNome();
+  var h = '<div class="stepbar"><span>Pergunta ' + (j + 1) + ' de 5</span><span class="bar"><i style="width:' + (100 * j / 5) + '%"></i></span></div>';
+  h += '<h1>' + (j === 0 && nome ? esc(nome) + ', ' + q.t.charAt(0).toLowerCase() + q.t.slice(1) : q.t) + '</h1><p class="why">' + q.why + '</p>';
+  if (q.escala) { h += '<div class="scale">'; for (var n = 0; n <= 10; n++) h += '<button class="opt" type="button" data-v="' + n + '">' + n + '</button>'; h += '</div><div class="ends"><span>O que sinto dirige</span><span>Eu dirijo</span></div>'; }
+  else h += q.op.map(function(o){ return '<button class="opt" type="button" data-v="' + esc(o) + '">' + esc(o.charAt(0).toUpperCase() + o.slice(1)) + '</button>'; }).join('');
+  m.innerHTML = h;
+  m.querySelectorAll('.opt').forEach(function(b){ b.onclick = function(){ A[q.k] = b.getAttribute('data-v'); j++; j < Q.length ? draw() : analisa(); }; });
+  window.scrollTo(0, 0);
+}
+function analisa(){
+  var fit = (+S.faixaIdx || 0) >= FI_CONFIG.faixaMinimaIdx, urg = A.urgencia !== 'Sem pressa';
+  var rota = (fit && urg && FI_CONFIG.agendaLink) ? 'call' : 'desperta';
+  fiSet({ termometro: A.termometro, gargalo: A.gargalo, rota: rota });
+  fiSend('quiz', { termometro: A.termometro, gargalo: A.gargalo, tempo: A.tempo, tentativas: A.tentativas, urgencia: A.urgencia, rota: rota });
+  fiTrack('CompleteRegistration', { content_name: 'Quiz Painel de Alerta' });
+  document.getElementById('qz').innerHTML = '<div class="anl"><div class="spin"></div><h1 style="font-size:26px">Analisando as suas respostas…</h1><p class="why">Montando o próximo passo para destravar ' + esc(A.gargalo) + '.</p></div>';
+  setTimeout(function(){ fiGo('agenda'); }, 2400);
+}
+draw();
 </script>
 </body>
 </html>

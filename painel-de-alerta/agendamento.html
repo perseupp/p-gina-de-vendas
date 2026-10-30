@@ -14,11 +14,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <script>
 window.FI_CONFIG = {
-  webhook: "https://marinehedgehog-n8n.cloudfy.live/webhook/desperta-isca",
+  webhook: "https://marinehedgehog-n8n.cloudfy.live/webhook/desperta-guia",
   pixelId: "1101252145658588",
   agendaLink: "",
   whatsapp: "5511970585755",
-  materialUrl: "/isca/guia-painel-de-alerta.pdf",
+  materialUrl: "/painel-de-alerta/guia-painel-de-alerta.pdf",
   despertaUrl: "/",
   faixaMinimaIdx: 2,
   urls: { lp: "index.html", quiz: "quiz.html", agenda: "agendamento.html", obrigado: "obrigado.html" }
@@ -150,7 +150,7 @@ if (rota === 'call') {
     + '<p style="margin-top:26px"><a class="btn gold full" id="dsp" href="#">Conhecer o Desperta</a></p>'
     + '<p class="fine" style="margin-top:12px;text-align:center"><a href="#" id="soGuia">Agora não, quero só o guia</a></p>';
   document.getElementById('dsp').onclick = function(e){ e.preventDefault(); fiSend('convite_desperta', {}); var u = fiUtms(), p = new URLSearchParams();
-    p.set('utm_source', u.utm_source || 'isca'); p.set('utm_medium', 'funil-isca'); p.set('utm_campaign', u.utm_campaign || 'painel-de-alerta'); if (u.utm_content) p.set('utm_content', u.utm_content);
+    p.set('utm_source', u.utm_source || 'guia'); p.set('utm_medium', 'painel-de-alerta'); p.set('utm_campaign', u.utm_campaign || 'painel-de-alerta'); if (u.utm_content) p.set('utm_content', u.utm_content);
     location.href = FI_CONFIG.despertaUrl + '?' + p.toString(); };
 }
 document.getElementById('soGuia').onclick = function(e){ e.preventDefault(); fiGo('obrigado', { r: 'material' }); };
