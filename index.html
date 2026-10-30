@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desperta | Rogério Dias</title>
+<meta name="description" content="Desperta: 3 horas ao vivo, todo sábado às 9h, para entender o que está dirigindo a sua vida. Com Rogério Dias, do Instituto Ascendere. Ingresso R$ 47.">
+<meta property="og:title" content="Desperta · 3 horas para entender o que está dirigindo a sua vida">
+<meta property="og:description" content="Evento online ao vivo, todo sábado das 9h às 12h. 4 atividades práticas e o Caderno do Motorista. Ingresso R$ 47.">
+<meta property="og:image" content="img/rogerio.webp">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+<!-- ============ INTEGRAÇÕES (preencher) ============ -->
+<script>
+  window.DESPERTA = {
+    // Link do checkout Kiwify do ingresso
+    checkoutUrl: "https://pay.kiwify.com.br/EcQUOtb",
+    // ID do Pixel da Meta. Deixe "" para desligar.
+    metaPixelId: "",
+    // URL do webhook (n8n, Make, CRM) que recebe nome, e-mail e WhatsApp antes do checkout. Deixe "" para desligar.
+    webhookUrl: ""
+  };
+</script>
+<script>
+  (function(){
+    var id = window.DESPERTA.metaPixelId;
+    if(!id) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', id);
+    fbq('track', 'PageView');
+  })();
+</script>
+<!-- ================================================= -->
+
+<style>
+:root{
+  --bg:#0B0B0B;
+  --bg-2:#131210;
+  --bg-3:#1B1915;
+  --line:#2C2820;
+  --gold:#C99A44;
+  --gold-hi:#E2BC6E;
+  --gold-lo:#8A6420;
+  --text:#F2EEE6;
+  --muted:#B4AC9E;
+  --paper:#FBF8F1;
+  --ink:#141414;
+  --display:'Oswald',sans-serif;
+  --body:'Lato',sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-transform:uppercase;line-height:1.05;margin:0;letter-spacing:.5px}
+p{margin:0}
+a{color:var(--gold-hi)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+section{padding:72px 0}
+@media(min-width:900px){section{padding:104px 0}}
+.eyebrow{font-family:var(--display);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.h2{font-size:clamp(32px,6vw,54px)}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:640px}
+.gold{color:var(--gold-hi)}
+.ornament{display:flex;align-items:center;gap:12px;margin:20px 0}
+.ornament span{height:1.5px;width:48px;background:var(--gold)}
+.ornament i{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}.center .ornament{justify-content:center}
+
+/* Botão */
+.btn{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:#141414;background:linear-gradient(180deg,var(--gold-hi),var(--gold));border:0;border-radius:4px;padding:18px 28px;cursor:pointer;box-shadow:0 10px 30px -10px rgba(201,154,68,.6);transition:transform .15s,box-shadow .15s;width:100%;max-width:460px;text-align:center}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(201,154,68,.75)}
+.btn:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+.btn small{display:block;font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:none;opacity:.8}
+.cta-note{font-size:14px;color:var(--muted);margin-top:12px}
+
+/* Barra superior */
+.topbar{position:sticky;top:0;z-index:40;background:#000;border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:center;gap:10px 18px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;font-size:14px}
+.topbar strong{font-family:var(--display);font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-hi)}
+.cd{display:flex;gap:6px;font-family:var(--display)}
+.cd div{background:var(--bg-3);border:1px solid var(--line);border-radius:3px;padding:2px 8px;min-width:44px;text-align:center;font-size:18px;line-height:1.2}
+.cd div span{display:block;font-size:9px;letter-spacing:1.5px;color:var(--muted);font-family:var(--body)}
+
+/* Hero */
+.hero{position:relative;padding:40px 0 64px;background:radial-gradient(ellipse 80% 60% at 75% 30%,rgba(201,154,68,.14),transparent 60%),var(--bg)}
+.hero .wrap{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.hero{padding:72px 0 96px}.hero .wrap{grid-template-columns:1.15fr .85fr;gap:56px}}
+.logo{height:46px;width:auto;margin-bottom:28px}
+.hero h1{font-size:clamp(40px,7.4vw,76px);margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--gold-hi)}
+.hero .sub{font-size:clamp(18px,2.4vw,21px);color:#D9D3C7;max-width:580px;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{display:flex;align-items:center;gap:8px;font-size:14px;border:1px solid var(--line);background:var(--bg-2);padding:8px 12px;border-radius:3px}
+.chip svg{flex:none}
+.hero-photo{position:relative;isolation:isolate;max-width:420px;margin:0 auto;width:100%}
+.hero-photo img{aspect-ratio:4/5;object-fit:cover;object-position:center 22%;width:100%;filter:saturate(.92)}
+.hero-photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1.5px solid var(--gold);z-index:-1}
+.hero-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 20px 18px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-family:var(--display);text-transform:uppercase;letter-spacing:1px}
+.hero-photo figcaption b{display:block;font-size:24px;font-weight:600}
+.hero-photo figcaption span{font-size:13px;letter-spacing:2px;color:var(--gold-hi)}
+
+@media(max-width:899px){.hero-photo{max-width:300px}}
+/* Pensamentos */
+.thoughts{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.thought-grid{display:grid;gap:14px;margin-top:40px}
+@media(min-width:720px){.thought-grid{grid-template-columns:1fr 1fr;gap:18px}}
+.thought{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--gold);padding:22px 24px;font-size:19px;font-style:italic;line-height:1.45}
+.thought-close{margin-top:36px;font-size:19px;max-width:720px}
+
+/* Carro x motorista */
+.split{display:grid;gap:28px;margin-top:40px}
+@media(min-width:820px){.split{grid-template-columns:1fr 1fr;gap:20px}}
+.card{border:1px solid var(--line);background:var(--bg-2);padding:28px;border-radius:4px}
+.card h3{font-size:24px;margin-bottom:10px}
+.card.dim{opacity:.85}
+.card.dim h3{color:var(--muted)}
+.card.hl{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,154,68,.08),transparent 70%),var(--bg-2)}
+.card.hl h3{color:var(--gold-hi)}
+.card ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}
+.card li{display:flex;gap:10px;align-items:flex-start}
+.card li::before{content:"";width:7px;height:7px;background:var(--gold);transform:translateY(10px) rotate(45deg);flex:none}
+.card.dim li::before{background:var(--muted)}
+.quote-big{margin-top:44px;font-family:var(--display);font-size:clamp(22px,3.4vw,34px);text-transform:uppercase;line-height:1.2;max-width:860px}
+.quote-big span{color:var(--gold-hi)}
+
+/* Método */
+.method{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stops{display:grid;gap:18px;margin-top:48px;counter-reset:s}
+@media(min-width:900px){.stops{grid-template-columns:repeat(3,1fr)}}
+.stop{position:relative;background:var(--bg);border:1px solid var(--line);padding:30px 26px 26px;border-radius:4px}
+.stop .num{font-family:var(--display);font-size:56px;font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--gold)}
+.stop h3{font-size:26px;margin:14px 0 4px}
+.stop .q{font-family:var(--display);text-transform:uppercase;letter-spacing:2px;font-size:13px;color:var(--gold)}
+.stop p{color:#D9D3C7;margin-top:12px}
+.stop .res{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:15px}
+.stop .res b{font-family:var(--display);font-weight:500;letter-spacing:1.5px;text-transform:uppercase;font-size:12px;color:var(--gold);display:block;margin-bottom:4px}
+
+/* Atividades */
+.acts{display:grid;gap:16px;margin-top:44px}
+@media(min-width:720px){.acts{grid-template-columns:1fr 1fr}}
+.act{display:flex;gap:18px;padding:24px;border:1px solid var(--line);border-radius:4px;background:var(--bg-2)}
+.act .ic{flex:none;width:52px;height:52px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;color:var(--gold-hi)}
+.act h3{font-size:21px;margin-bottom:6px}
+.act p{color:#D9D3C7;font-size:16px}
+
+/* Caderno */
+.caderno{background:var(--paper);color:var(--ink)}
+.caderno .eyebrow{color:var(--gold-lo)}
+.caderno .lead{color:#4A463F}
+.caderno .ornament span,.caderno .ornament i{background:var(--gold)}
+.cad-grid{display:grid;gap:40px;align-items:center;margin-top:8px}
+@media(min-width:900px){.cad-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.pages{position:relative;height:380px;max-width:440px;margin:0 auto;width:100%}
+.pg{position:absolute;width:62%;aspect-ratio:794/1123;background:#fff;box-shadow:0 18px 40px -16px rgba(0,0,0,.35);padding:5%;display:flex;flex-direction:column}
+.pg.p1{left:0;top:30px;transform:rotate(-6deg)}
+.pg.p2{right:0;top:30px;transform:rotate(5deg)}
+.pg.p3{left:19%;top:0;z-index:2}
+.pg .frame{border:1px solid var(--gold);padding:3px;flex:1;display:flex}
+.pg .frame>div{border:.5px solid var(--gold);flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:8px}
+.pg .wheel{width:56px;height:56px;border-radius:50%;background:#FBF6EA;display:flex;align-items:center;justify-content:center}
+.pg .tt{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:22px;line-height:.95}
+.pg .tag{font-family:var(--display);font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-lo)}
+.pg .lines{width:100%;display:grid;gap:9px;margin-top:6px}
+.pg .lines i{display:block;height:1px;background:#C9C3B6}
+.pg .scale{display:flex;gap:3px;justify-content:center;width:100%}
+.pg .scale i{width:11px;height:11px;border:1px solid #9A9488;border-radius:50%;font-size:6px}
+.pg h4{margin:0;font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:13px;align-self:flex-start}
+.pg .box{width:100%;border:1px solid var(--gold);background:#FBF8F1;height:30px}
+.cad-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.cad-list li{display:flex;gap:12px;align-items:flex-start}
+.cad-list li b{font-family:var(--display);font-weight:600;color:var(--gold-lo);min-width:26px}
+.caderno .tagline{margin-top:22px;font-size:15px;color:#4A463F;border-left:3px solid var(--gold);padding-left:14px}
+
+/* Agenda */
+.timeline{margin-top:44px;display:grid;gap:0;max-width:820px}
+.tl{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.tl:first-child{border-top:1px solid var(--line)}
+.tl time{font-family:var(--display);font-size:20px;color:var(--gold-hi);letter-spacing:.5px}
+.tl h3{font-size:20px;margin-bottom:4px}
+.tl p{color:var(--muted);font-size:15px}
+@media(max-width:480px){.tl{grid-template-columns:1fr;gap:4px}}
+
+/* Para quem */
+.forwho{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fw{display:grid;gap:18px;margin-top:40px}
+@media(min-width:820px){.fw{grid-template-columns:1fr 1fr}}
+.fw .card ul{gap:14px}
+.fw .no li::before{background:#6E685D}
+.ico-yes,.ico-no{display:inline-flex;align-items:center;gap:10px}
+
+/* Quem conduz */
+.about .wrap{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.about .wrap{grid-template-columns:.8fr 1.2fr;gap:64px}}
+.about-photo{max-width:380px;margin:0 auto;width:100%;position:relative;isolation:isolate}
+.about-photo img{aspect-ratio:3/4;object-fit:cover;object-position:center 22%;width:100%}
+.about-photo::after{content:"";position:absolute;inset:-12px 12px 12px -12px;border:1.5px solid var(--gold);z-index:-1}
+.creds{display:grid;gap:8px;margin:20px 0 24px}
+.creds div{display:flex;gap:10px;align-items:baseline}
+.creds div::before{content:"";width:7px;height:7px;background:var(--gold);flex:none;transform:translateY(-2px)}
+.story{display:grid;gap:14px;color:#D9D3C7}
+.pullq{margin-top:26px;padding:22px 24px;border:1px solid var(--gold);background:rgba(201,154,68,.06);font-size:19px;font-style:italic;line-height:1.5}
+.pullq cite{display:block;margin-top:10px;font-style:normal;font-family:var(--display);text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--gold)}
+
+/* Conta */
+.math{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.costs{display:grid;gap:14px;margin-top:40px}
+@media(min-width:820px){.costs{grid-template-columns:repeat(3,1fr)}}
+.cost{border:1px solid var(--line);background:var(--bg);padding:24px;border-radius:4px}
+.cost h3{font-size:20px;color:var(--gold-hi);margin-bottom:8px}
+.cost p{color:#D9D3C7;font-size:16px}
+.math-close{margin-top:36px;font-size:19px;max-width:760px}
+
+/* Oferta */
+.offer-box{max-width:620px;margin:40px auto 0;border:1.5px solid var(--gold);background:linear-gradient(180deg,rgba(201,154,68,.10),transparent 55%),var(--bg-2);border-radius:6px;padding:34px 22px;text-align:center}
+@media(min-width:600px){.offer-box{padding:44px 44px}}
+.offer-box .ed{font-family:var(--display);letter-spacing:2px;text-transform:uppercase;font-size:14px;color:var(--gold-hi)}
+.offer-box ul{list-style:none;padding:0;margin:26px 0;text-align:left;display:grid;gap:12px}
+.offer-box li{display:flex;gap:12px;align-items:flex-start;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.offer-box li svg{flex:none;margin-top:4px}
+.offer-box li span{flex:1}
+.offer-box li em{font-style:normal;color:var(--muted);font-size:14px;white-space:nowrap}
+.price-old{color:var(--muted);font-size:17px}
+.price-old s{color:#8F887B}
+.price{font-family:var(--display);font-weight:700;font-size:72px;line-height:1;color:var(--gold-hi);margin:8px 0 2px}
+.price small{font-size:28px;vertical-align:top;margin-right:4px}
+.price-sub{color:var(--muted);font-size:15px;margin-bottom:26px}
+.secure{display:flex;justify-content:center;gap:8px;align-items:center;margin-top:14px;font-size:13px;color:var(--muted)}
+
+/* FAQ */
+.faq{max-width:820px;margin:40px auto 0}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;position:relative;font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:.5px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:14px;font-size:28px;color:var(--gold);font-family:var(--body);font-weight:400}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 22px;color:#D9D3C7}
+
+/* Final */
+.final{background:radial-gradient(ellipse 70% 70% at 50% 0%,rgba(201,154,68,.16),transparent 60%),var(--bg);text-align:center}
+.final h2{font-size:clamp(34px,6.4vw,64px)}
+footer{border-top:1px solid var(--line);padding:40px 0 48px;font-size:14px;color:var(--muted)}
+footer .wrap{display:grid;gap:22px}
+@media(min-width:820px){footer .wrap{grid-template-columns:auto 1fr auto;align-items:center}}
+footer img{height:40px;width:auto}
+footer .ig{display:flex;flex-direction:column;gap:6px}
+footer .ig a{color:var(--text);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+footer .ig a:hover{color:var(--gold-hi)}
+.disclaimer{grid-column:1/-1;font-size:13px;line-height:1.55;border-top:1px solid var(--line);padding-top:20px}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.78);backdrop-filter:blur(3px)}
+.modal.open{display:flex}
+.modal-card{position:relative;width:100%;max-width:440px;background:var(--bg-2);border:1.5px solid var(--gold);border-radius:6px;padding:30px 22px 24px;max-height:calc(100vh - 32px);overflow:auto}
+@media(min-width:480px){.modal-card{padding:36px 32px 28px}}
+.modal-card h3{font-size:26px;margin:8px 0 6px}
+.modal-card p.m{color:var(--muted);font-size:15px;margin-bottom:20px}
+.close{position:absolute;top:8px;right:8px;width:40px;height:40px;border:0;background:none;color:var(--muted);font-size:26px;cursor:pointer}
+.close:hover{color:var(--text)}
+.field{display:grid;gap:6px;margin-bottom:14px;text-align:left}
+.field label{font-size:13px;font-weight:700;letter-spacing:.5px;color:#D9D3C7}
+.field input{font:inherit;font-size:16px;color:var(--text);background:var(--bg);border:1px solid #3A352B;border-radius:4px;padding:14px;width:100%}
+.field input:focus{outline:none;border-color:var(--gold)}
+.field .err{display:none;font-size:13px;color:#E08A6E}
+.field.bad input{border-color:#E08A6E}.field.bad .err{display:block}
+.modal-card .btn{max-width:none;margin-top:6px}
+.privacy{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- Barra com a próxima edição -->
+<div class="topbar" role="region" aria-label="Próxima edição">
+  <div class="wrap">
+    <span>Próxima edição: <strong id="nextDateTop">sábado, 09h</strong></span>
+    <div class="cd" aria-live="off">
+      <div><b data-cd="d">00</b><span>DIAS</span></div>
+      <div><b data-cd="h">00</b><span>HORAS</span></div>
+      <div><b data-cd="m">00</b><span>MIN</span></div>
+      <div><b data-cd="s">00</b><span>SEG</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <img class="logo" src="img/logo-ascendere.png" alt="Instituto Ascendere" width="150" height="46">
+      <div class="eyebrow">Desperta · Evento online ao vivo · Todo sábado</div>
+      <h1>Você tem um excelente carro.<br><em>O problema é quem está ao volante.</em></h1>
+      <p class="sub">3 horas ao vivo para entender o que está dirigindo a sua vida e sair com o seu padrão, a sua crença raiz e a sua primeira nova resposta escritos no papel.</p>
+      <div class="chips">
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C99A44" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Sábado, 09h às 12h</div>
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C99A44" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>Ao vivo no Google Meet</div>
+        <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C99A44" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 9h8M8 13h6"/></svg>Caderno do Motorista incluso</div>
+      </div>
+      <button class="btn js-open" type="button">Quero minha vaga por R$&nbsp;47<small>Próxima edição: <span class="js-next-date">sábado</span></small></button>
+      <p class="cta-note">Pagamento seguro pela Kiwify · Pix ou cartão</p>
+    </div>
+    <figure class="hero-photo" style="margin:0 auto">
+      <img src="img/rogerio.webp" alt="Rogério Dias, sorrindo, com as mãos entrelaçadas" width="800" height="1000" fetchpriority="high">
+      <figcaption><b>Rogério Dias</b><span>Treinador comportamental</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- PENSAMENTOS -->
+<section class="thoughts">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Talvez você já tenha pensado</div>
+      <h2 class="h2" style="margin-top:12px">Alguma dessas frases<br>passa pela sua cabeça?</h2>
+    </div>
+    <div class="thought-grid">
+      <div class="thought rv">“Eu me esforço tanto e nada muda de verdade.”</div>
+      <div class="thought rv">“Eu sei o que preciso fazer, mas não consigo me manter firme.”</div>
+      <div class="thought rv">“Toda vez que as coisas começam a dar certo, eu mesmo estrago.”</div>
+      <div class="thought rv">“Eu já li, já estudei, já tentei de tudo. O que está faltando?”</div>
+    </div>
+    <p class="thought-close rv">O dinheiro que não sobra, a briga que se repete em casa, a conquista que escapa pelas mãos. Não é falta de esforço e não é falta de conhecimento. <strong class="gold">É um padrão que dirige por você, e você ainda não enxergou qual é.</strong></p>
+  </div>
+</section>
+
+<!-- CARRO x MOTORISTA -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Por que estudar mais não resolveu</div>
+      <h2 class="h2" style="margin-top:12px">Conhecimento é o carro.<br><span class="gold">Comportamento é quem dirige.</span></h2>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+      <p class="lead">Você fez a faculdade, a pós, os cursos. Investiu no carro. Mas ninguém te ensinou a governar o que você sente, e é isso que decide para onde o carro vai.</p>
+    </div>
+    <div class="split">
+      <div class="card dim rv">
+        <h3>O que você tentou</h3>
+        <ul>
+          <li>Estudar mais um curso, mais um livro, mais uma especialização</li>
+          <li>Se esforçar o dobro e esperar o resultado vir junto</li>
+          <li>Prometer que dessa vez vai ser diferente</li>
+          <li>Seguir em frente sem entender por que trava sempre no mesmo lugar</li>
+        </ul>
+      </div>
+      <div class="card hl rv">
+        <h3>O que o Desperta faz</h3>
+        <ul>
+          <li>Mostra o padrão que se repete na sua vida, escrito em uma frase</li>
+          <li>Revela a crença raiz que sustenta esse padrão</li>
+          <li>Te dá a primeira nova resposta para usar já na semana seguinte</li>
+          <li>Tudo com prática, no seu caderno, durante o evento</li>
+        </ul>
+      </div>
+    </div>
+    <p class="quote-big rv">Um profissional é contratado pelo seu conhecimento <span>e demitido pelo seu comportamento.</span></p>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="method" id="metodo">
+  <div class="wrap">
+    <div class="center rv">
+      <div class="eyebrow">Método Assuma o Volante</div>
+      <h2 class="h2" style="margin-top:12px">3 paradas em 3 horas</h2>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+      <p class="lead">Uma sequência que vai de fora para dentro e volta para a ação. Cada parada termina com algo concreto escrito por você.</p>
+    </div>
+    <div class="stops">
+      <article class="stop rv">
+        <div class="num">01</div>
+        <h3>Painel de Alerta</h3>
+        <div class="q">O que acontece</div>
+        <p>As luzes que acendem na sua vida não são o problema. São sinais de um padrão: gatilho, emoção, reação. Você aprende a ler o seu painel.</p>
+        <div class="res"><b>Você sai com</b>O seu padrão escrito em uma frase.</div>
+      </article>
+      <article class="stop rv">
+        <div class="num">02</div>
+        <h3>Caixa-Preta</h3>
+        <div class="q">Por que acontece</div>
+        <p>Todo padrão já foi uma proteção, e toda proteção se apoia numa crença. Você abre a caixa-preta e descobre o que foi instalado.</p>
+        <div class="res"><b>Você sai com</b>A sua crença raiz identificada.</div>
+      </article>
+      <article class="stop rv">
+        <div class="num">03</div>
+        <h3>Recalibragem</h3>
+        <div class="q">O que fazer diferente</div>
+        <p>O cérebro pode reaprender. Você reescreve a crença, decide uma resposta nova e ensaia essa resposta numa prática guiada.</p>
+        <div class="res"><b>Você sai com</b>Uma nova resposta e um compromisso de 7 dias.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ATIVIDADES -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">O diferencial</div>
+      <h2 class="h2" style="margin-top:12px">Você não vai só assistir.<br><span class="gold">Vai fazer.</span></h2>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+      <p class="lead">São 4 atividades práticas ao longo das 3 horas. É nelas que a virada de chave acontece.</p>
+    </div>
+    <div class="acts">
+      <div class="act rv">
+        <div class="ic">1</div>
+        <div>
+          <h3>Termômetro do Volante</h3>
+          <p>De 0 a 10: hoje, quem dirige a sua vida é você ou o que você sente? Você mede no início e de novo no final, e vê a diferença.</p>
+        </div>
+      </div>
+      <div class="act rv">
+        <div class="ic">2</div>
+        <div>
+          <h3>Inventário Relâmpago</h3>
+          <p>Três frases de “eu sei que preciso, mas não faço porque” revelam o que se repete. Você termina com o seu padrão em uma frase.</p>
+        </div>
+      </div>
+      <div class="act rv">
+        <div class="ic">3</div>
+        <div>
+          <h3>Abrindo a Caixa-Preta</h3>
+          <p>Em trio, com tempo para cada um, você descobre o que o seu padrão tenta proteger e quando ele nasceu. Quem escuta não aconselha, só escuta.</p>
+        </div>
+      </div>
+      <div class="act rv">
+        <div class="ic">4</div>
+        <div>
+          <h3>Ensaio do Novo Motorista</h3>
+          <p>Uma prática guiada pelo Rogério em que você se vê escolhendo a nova resposta diante do gatilho, e marca esse estado para voltar a ele.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CADERNO -->
+<section class="caderno">
+  <div class="wrap">
+    <div class="cad-grid">
+      <div class="pages rv" aria-hidden="true">
+        <div class="pg p1"><div class="frame"><div>
+          <h4>Inventário relâmpago</h4>
+          <div class="lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="box"></div>
+        </div></div></div>
+        <div class="pg p2"><div class="frame"><div>
+          <h4>Termômetro</h4>
+          <div class="scale"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="lines"><i></i><i></i><i></i><i></i></div>
+          <div class="box"></div>
+        </div></div></div>
+        <div class="pg p3"><div class="frame"><div>
+          <div class="wheel"><svg width="40" height="40" viewBox="0 0 230 230"><circle cx="115" cy="115" r="104" fill="none" stroke="#C99A44" stroke-width="10"/><circle cx="115" cy="115" r="22" fill="none" stroke="#C99A44" stroke-width="10"/><line x1="93" y1="115" x2="12" y2="115" stroke="#C99A44" stroke-width="10"/><line x1="137" y1="115" x2="218" y2="115" stroke="#C99A44" stroke-width="10"/><line x1="115" y1="137" x2="115" y2="218" stroke="#C99A44" stroke-width="10"/></svg></div>
+          <div class="tag">Desperta · Método Assuma o Volante</div>
+          <div class="tt">Caderno do<br>Motorista</div>
+        </div></div></div>
+      </div>
+      <div class="rv">
+        <div class="eyebrow">Incluso no ingresso</div>
+        <h2 class="h2" style="margin-top:12px">O Caderno do Motorista</h2>
+        <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+        <p class="lead">Um material de 8 páginas para você imprimir ou deixar aberto ao lado da tela. Tudo o que você descobrir fica registrado com a sua letra.</p>
+        <ul class="cad-list">
+          <li><b>01</b><span>O Termômetro do Volante, no início e no fim</span></li>
+          <li><b>02</b><span>Uma página para cada parada, com a sua atividade</span></li>
+          <li><b>03</b><span>O seu padrão, a sua crença raiz e a sua nova resposta</span></li>
+          <li><b>04</b><span>“Meus 7 dias ao volante”: o registro da semana seguinte</span></li>
+        </ul>
+        <p class="tagline">Você recebe o caderno por e-mail e WhatsApp até a véspera do evento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Como é o sábado</div>
+      <h2 class="h2" style="margin-top:12px">Das 9h ao meio-dia</h2>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+    <div class="timeline">
+      <div class="tl rv"><time>09:00</time><div><h3>O carro e o motorista</h3><p>Boas-vindas, a história do Rogério e o seu Termômetro inicial.</p></div></div>
+      <div class="tl rv"><time>09:20</time><div><h3>Painel de Alerta</h3><p>Os sinais da sua vida e o Inventário Relâmpago.</p></div></div>
+      <div class="tl rv"><time>10:00</time><div><h3>Pausa</h3><p>Cinco minutos para respirar e pegar água.</p></div></div>
+      <div class="tl rv"><time>10:05</time><div><h3>Caixa-Preta</h3><p>A crença raiz por trás do padrão, com a atividade em trio.</p></div></div>
+      <div class="tl rv"><time>10:40</time><div><h3>Recalibragem</h3><p>Nova crença, nova resposta, o Ensaio do Novo Motorista e o seu compromisso de 7 dias.</p></div></div>
+      <div class="tl rv"><time>11:15</time><div><h3>Termômetro final e próximo passo</h3><p>Você mede de novo, conhece o caminho para continuar e tira as suas dúvidas.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="forwho">
+  <div class="wrap">
+    <div class="center rv">
+      <div class="eyebrow">Antes de garantir a vaga</div>
+      <h2 class="h2" style="margin-top:12px">O Desperta é para você?</h2>
+    </div>
+    <div class="fw">
+      <div class="card hl rv">
+        <h3 class="ico-yes"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E2BC6E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>É para quem</h3>
+        <ul>
+          <li>Trabalha muito, mas não vê a vida prosperar na mesma proporção</li>
+          <li>Está disposto a olhar para dentro, mesmo que doa</li>
+          <li>Quer decidir e agir com firmeza, sem sabotar o próprio progresso</li>
+          <li>Busca prosperar em várias áreas da vida, não só na financeira</li>
+        </ul>
+      </div>
+      <div class="card dim no rv">
+        <h3 class="ico-no"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B4AC9E" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>Não é para quem</h3>
+        <ul>
+          <li>Busca fórmula mágica sem se comprometer a aplicar</li>
+          <li>Não está disposto a olhar para si mesmo</li>
+          <li>Quer só teoria, sem estar aberto a mudar de fato</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM CONDUZ -->
+<section class="about">
+  <div class="wrap">
+    <div class="about-photo rv"><img src="img/rogerio.webp" alt="Retrato de Rogério Dias" width="800" height="1066" loading="lazy"></div>
+    <div class="rv">
+      <div class="eyebrow">Quem conduz</div>
+      <h2 class="h2" style="margin-top:12px">Rogério Dias</h2>
+      <div class="creds">
+        <div>Treinador Comportamental</div>
+        <div>Trainer em PNL</div>
+        <div>Pós-graduado em Neurociência e Mediação de Conflitos</div>
+        <div>CEO do Instituto Ascendere</div>
+      </div>
+      <div class="story">
+        <p>Eu sabia o que precisava fazer, mas não conseguia sustentar nada. Perdi empregos e perdi o meu casamento. O fundo do poço foi ser flagrado dormindo na mesa de trabalho e demitido pelo vice-presidente da empresa.</p>
+        <p>Foi aí que fui estudar neurociência, PNL e hipnose para entender as minhas próprias emoções. A vida ainda me atinge. A diferença é que hoje um impacto não vira mais um bloqueio.</p>
+      </div>
+      <blockquote class="pullq" style="margin-left:0;margin-right:0">“Se algo que aconteceu fora de mim instalou esse sofrimento dentro de mim, então isso também pode ser desinstalado.”<cite>A pergunta que mudou tudo</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- A CONTA -->
+<section class="math">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Faça a conta</div>
+      <h2 class="h2" style="margin-top:12px">Quanto o seu padrão<br>já te custou?</h2>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+    <div class="costs">
+      <div class="cost rv"><h3>Em dinheiro</h3><p>A promoção que não veio, o negócio que não decolou, a reserva que nunca se formou, mesmo trabalhando tanto.</p></div>
+      <div class="cost rv"><h3>Nas relações</h3><p>A mesma briga com o cônjuge, a distância dos filhos, o atrito no trabalho que volta toda semana.</p></div>
+      <div class="cost rv"><h3>Em anos</h3><p>Cada ano repetindo o mesmo padrão é um ano a menos vivendo a vida que você poderia estar construindo.</p></div>
+    </div>
+    <p class="math-close rv">Perto disso, <strong class="gold">R$ 47 e uma manhã de sábado</strong> é o menor investimento que você pode fazer para finalmente enxergar o que está ao volante.</p>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section id="ingresso">
+  <div class="wrap">
+    <div class="center rv">
+      <div class="eyebrow">Garanta a sua vaga</div>
+      <h2 class="h2" style="margin-top:12px">Desperta</h2>
+    </div>
+    <div class="offer-box rv">
+      <div class="ed">Próxima edição · <span class="js-next-date">sábado</span> · 09h às 12h</div>
+      <ul>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E2BC6E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>3 horas ao vivo com o Rogério no Google Meet</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E2BC6E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>As 3 paradas do Método Assuma o Volante</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E2BC6E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>4 atividades práticas, incluindo a prática guiada</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E2BC6E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Caderno do Motorista, 8 páginas para imprimir</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E2BC6E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Grupo da edição no WhatsApp</span></li>
+      </ul>
+      <p class="price-old">Valor do encontro: <s>R$ 497</s></p>
+      <div class="price"><small>R$</small>47</div>
+      <p class="price-sub">à vista ou parcelado no cartão</p>
+      <button class="btn js-open" type="button">Quero minha vaga</button>
+      <div class="secure"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Pagamento seguro pela Kiwify · Pix ou cartão</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="forwho" style="padding-top:72px">
+  <div class="wrap">
+    <div class="center rv">
+      <div class="eyebrow">Dúvidas</div>
+      <h2 class="h2" style="margin-top:12px">Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Como recebo o acesso?</summary><p>Depois do pagamento, você recebe o link do Google Meet e o Caderno do Motorista por e-mail e WhatsApp, e entra no grupo da edição. No dia, mandamos lembretes antes de começar.</p></details>
+      <details><summary>Preciso imprimir o caderno?</summary><p>É o ideal, porque escrever à mão fixa o que você descobre. Se não puder, deixe o PDF aberto ao lado da tela e use um caderno comum.</p></details>
+      <details><summary>Preciso abrir a câmera?</summary><p>É recomendado, porque o Desperta é prático e tem uma atividade em trio. Mas você só compartilha o que quiser, quando quiser.</p></details>
+      <details><summary>Isso é terapia?</summary><p>Não. O Desperta é um trabalho comportamental e não substitui tratamento de saúde. Se você faz acompanhamento com um profissional, mantenha.</p></details>
+      <details><summary>Vai ter alguma oferta no final?</summary><p>Sim. Nos minutos finais, o Rogério apresenta a mentoria Governo de Si para quem quiser continuar o caminho. Não há nenhuma obrigação: o Desperta foi feito para ter valor completo por si só.</p></details>
+      <details><summary>Quais as formas de pagamento?</summary><p>Pix ou cartão de crédito, com opção de parcelamento, pela Kiwify.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">Neste sábado, às 9h</div>
+      <h2 style="margin-top:14px">Assuma o volante<br><span class="gold">da sua vida.</span></h2>
+      <div class="ornament" aria-hidden="true" style="justify-content:center"><span></span><i></i><span></span></div>
+      <p class="lead" style="margin:0 auto 30px">3 horas para entender o que está dirigindo a sua vida. O próximo passo é seu.</p>
+      <button class="btn js-open" type="button">Quero minha vaga por R$&nbsp;47<small>Próxima edição: <span class="js-next-date">sábado</span></small></button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-ascendere.png" alt="Instituto Ascendere" width="130" height="40" loading="lazy">
+    <div></div>
+    <div class="ig">
+      <a href="https://www.instagram.com/eu.rogerio.dias/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C99A44" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg>@eu.rogerio.dias</a>
+      <a href="https://www.instagram.com/instituto.ascendere/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C99A44" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg>@instituto.ascendere</a>
+    </div>
+    <p class="disclaimer">O Desperta é um trabalho de desenvolvimento comportamental e não substitui acompanhamento médico ou psicológico. Os resultados dependem da aplicação de cada participante. © <span id="yr">2026</span> Instituto Ascendere.</p>
+  </div>
+</footer>
+
+<!-- MODAL DE CAPTURA -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-card">
+    <button class="close" type="button" aria-label="Fechar">×</button>
+    <div class="eyebrow">Passo 1 de 2</div>
+    <h3 id="mTitle">Para onde enviamos o seu acesso?</h3>
+    <p class="m">O link do encontro e o Caderno do Motorista chegam por e-mail e WhatsApp.</p>
+    <form id="leadForm" novalidate>
+      <div class="field"><label for="fNome">Nome</label><input id="fNome" name="nome" autocomplete="name" required><span class="err">Digite o seu nome.</span></div>
+      <div class="field"><label for="fEmail">E-mail</label><input id="fEmail" name="email" type="email" autocomplete="email" inputmode="email" required><span class="err">Digite um e-mail válido.</span></div>
+      <div class="field"><label for="fWhats">WhatsApp com DDD</label><input id="fWhats" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required><span class="err">Digite o seu WhatsApp com DDD.</span></div>
+      <button class="btn" type="submit" id="fSubmit">Ir para o pagamento</button>
+    </form>
+    <p class="privacy">Seus dados ficam só com o Instituto Ascendere.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var cfg = window.DESPERTA;
+
+  /* ---------- Próxima edição: todo sábado, 09:00 (horário de Brasília, UTC-3) ---------- */
+  function nextEdition(){
+    var now = new Date();
+    // Converte "agora" para o relógio de Brasília (UTC-3)
+    var br = new Date(now.getTime() - 3*3600*1000);
+    var day = br.getUTCDay(); // 6 = sábado
+    var diff = (6 - day + 7) % 7;
+    var t = Date.UTC(br.getUTCFullYear(), br.getUTCMonth(), br.getUTCDate() + diff, 9+3, 0, 0); // 09:00 BRT = 12:00 UTC
+    if (t <= now.getTime()) t += 7*24*3600*1000;
+    return new Date(t);
+  }
+  var target = nextEdition();
+  var tBr = new Date(target.getTime() - 3*3600*1000);
+  var dd = String(tBr.getUTCDate()).padStart(2,'0'), mm = String(tBr.getUTCMonth()+1).padStart(2,'0');
+  var label = 'sábado, ' + dd + '/' + mm;
+  document.getElementById('nextDateTop').textContent = label + ' · 09h';
+  document.querySelectorAll('.js-next-date').forEach(function(el){ el.textContent = label; });
+  var yr = document.getElementById('yr'); if (yr) yr.textContent = tBr.getUTCFullYear();
+
+  var els = {d:document.querySelector('[data-cd=d]'),h:document.querySelector('[data-cd=h]'),m:document.querySelector('[data-cd=m]'),s:document.querySelector('[data-cd=s]')};
+  function tick(){
+    var ms = target.getTime() - Date.now();
+    if (ms <= 0){ target = nextEdition(); ms = target.getTime() - Date.now(); }
+    var s = Math.floor(ms/1000);
+    els.d.textContent = String(Math.floor(s/86400)).padStart(2,'0');
+    els.h.textContent = String(Math.floor(s%86400/3600)).padStart(2,'0');
+    els.m.textContent = String(Math.floor(s%3600/60)).padStart(2,'0');
+    els.s.textContent = String(s%60).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---------- Animação de entrada ---------- */
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.12});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); }); }
+
+  /* ---------- Modal ---------- */
+  var modal = document.getElementById('modal');
+  var lastFocus = null;
+  function openM(){
+    lastFocus = document.activeElement;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){ document.getElementById('fNome').focus(); }, 50);
+    if (window.fbq) fbq('track','InitiateCheckout');
+  }
+  function closeM(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('.js-open').forEach(function(b){ b.addEventListener('click', openM); });
+  modal.querySelector('.close').addEventListener('click', closeM);
+  modal.addEventListener('click', function(e){ if (e.target === modal) closeM(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) closeM(); });
+
+  // Máscara simples do WhatsApp
+  var w = document.getElementById('fWhats');
+  w.addEventListener('input', function(){
+    var v = w.value.replace(/\D/g,'').slice(0,11);
+    if (v.length > 6) w.value = '(' + v.slice(0,2) + ') ' + v.slice(2, v.length-4) + '-' + v.slice(-4);
+    else if (v.length > 2) w.value = '(' + v.slice(0,2) + ') ' + v.slice(2);
+    else w.value = v;
+  });
+
+  function setBad(input, bad){ input.parentElement.classList.toggle('bad', bad); }
+
+  // Repassa os UTMs da página para o checkout
+  function checkoutWithUtms(){
+    var url = new URL(cfg.checkoutUrl);
+    var p = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){
+      if (p.get(k)) url.searchParams.set(k, p.get(k));
+    });
+    return url.toString();
+  }
+
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var n = document.getElementById('fNome'), em = document.getElementById('fEmail');
+    var okN = n.value.trim().length >= 2;
+    var okE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em.value.trim());
+    var okW = w.value.replace(/\D/g,'').length >= 10;
+    setBad(n,!okN); setBad(em,!okE); setBad(w,!okW);
+    if (!(okN && okE && okW)){ (okN ? (okE ? w : em) : n).focus(); return; }
+
+    var btn = document.getElementById('fSubmit');
+    btn.disabled = true; btn.textContent = 'Abrindo o pagamento…';
+
+    var lead = {
+      nome: n.value.trim(),
+      email: em.value.trim().toLowerCase(),
+      whatsapp: w.value.replace(/\D/g,''),
+      edicao: tBr.toISOString().slice(0,10),
+      pagina: location.href,
+      enviado_em: new Date().toISOString()
+    };
+    new URLSearchParams(location.search).forEach(function(v,k){ if (k.indexOf('utm_')===0) lead[k]=v; });
+
+    if (window.fbq) fbq('track','Lead');
+
+    var go = function(){ location.href = checkoutWithUtms(); };
+    if (cfg.webhookUrl){
+      var done = false, finish = function(){ if(!done){ done = true; go(); } };
+      try {
+        fetch(cfg.webhookUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(lead), keepalive:true})
+          .then(finish, finish);
+      } catch(err){ finish(); }
+      setTimeout(finish, 1500);
+    } else {
+      go();
+    }
+  });
+})();
+</script>
+</body>
+</html>
