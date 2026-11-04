@@ -709,7 +709,7 @@ footer .ig a:hover{color:#E2BC6E}
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     setTimeout(function(){ document.getElementById('fNome').focus(); }, 50);
-    if (window.fbq) fbq('track','InitiateCheckout');
+    if (window.fbq) fbq('trackCustom','AbriuFormulario');
   }
   function closeM(){
     modal.classList.remove('open');
@@ -764,7 +764,7 @@ footer .ig a:hover{color:#E2BC6E}
     };
     new URLSearchParams(location.search).forEach(function(v,k){ if (k.indexOf('utm_')===0) lead[k]=v; });
 
-    if (window.fbq) fbq('track','Lead');
+    if (window.fbq){ fbq('track','Lead'); fbq('track','InitiateCheckout'); }
 
     var go = function(){ location.href = checkoutWithUtms(); };
     if (cfg.webhookUrl){

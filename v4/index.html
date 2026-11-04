@@ -229,7 +229,7 @@ var R = {}, P = 0, cfg = window.DESPERTA;
 function proxSabado(){ var now = new Date(), br = new Date(now.getTime() - 3*3600*1000); var t = Date.UTC(br.getUTCFullYear(), br.getUTCMonth(), br.getUTCDate() + (6 - br.getUTCDay() + 7) % 7, 12); if (t <= now.getTime()) t += 7*864e5; return new Date(t - 3*3600*1000); }
 var ED = proxSabado();
 document.querySelectorAll('.js-data').forEach(function(e){ e.textContent = 'Sábado, ' + String(ED.getUTCDate()).padStart(2,'0') + '/' + String(ED.getUTCMonth()+1).padStart(2,'0'); });
-function abrirPopup(){ R = {}; P = 0; document.getElementById('pop').hidden = false; document.body.style.overflow = 'hidden'; desenha(); if (window.fbq) fbq('track','InitiateCheckout'); }
+function abrirPopup(){ R = {}; P = 0; document.getElementById('pop').hidden = false; document.body.style.overflow = 'hidden'; desenha(); if (window.fbq) fbq('trackCustom','AbriuFormulario'); }
 function fecharPopup(){ document.getElementById('pop').hidden = true; document.body.style.overflow = ''; }
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') fecharPopup(); });
 function desenha(){ var p = PASSOS[P], c = document.getElementById('popCorpo');
@@ -252,6 +252,7 @@ function fim(){ var fit = R.fit || 0, cap = R.cap || 0, urg = R.urg || 0, it = R
  document.getElementById('popCorpo').innerHTML = '<p class="xl">Abrindo o pagamento…</p><p class="mini" style="margin-top:10px">O link do encontro e o Caderno do Motorista chegam por WhatsApp.</p>';
  var lead = { nome: R.nome, email: R.email.toLowerCase(), whatsapp: R.whats.replace(/\D/g,''), edicao: ED.toISOString().slice(0,10), pagina: location.href, pagina_versao: cfg.versao, qualificacao: t, enviado_em: new Date().toISOString() };
  new URLSearchParams(location.search).forEach(function(v,k){ if (k.indexOf('utm_') === 0) lead[k] = v; });
+ if (window.fbq) fbq('track','InitiateCheckout');
  if (window.fbq && t !== 'Fora do perfil') fbq('track','Lead',{content_category: t});
  var url = new URL(cfg.checkoutUrl), q = new URLSearchParams(location.search);
  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){ if (q.get(k)) url.searchParams.set(k, q.get(k)); });
