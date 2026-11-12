@@ -656,7 +656,7 @@ footer p{max-width:720px;line-height:1.6}
       if (!enviado){
         try { fetch(cfg.webhookUrl, {method:'POST', mode:'no-cors', body:dados, keepalive:true}); } catch(err){}
       }
-      setTimeout(go, 300);
+      setTimeout(go, 1000);
     } else {
       go();
     }

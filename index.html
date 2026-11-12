@@ -776,7 +776,7 @@ footer .ig a:hover{color:#E2BC6E}
       if (!enviado){
         try { fetch(cfg.webhookUrl, {method:'POST', mode:'no-cors', body:dados, keepalive:true}); } catch(err){}
       }
-      setTimeout(go, 300);
+      setTimeout(go, 1000);
     } else {
       go();
     }

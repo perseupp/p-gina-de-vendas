@@ -259,7 +259,7 @@ function fim(){ var fit = R.fit || 0, cap = R.cap || 0, urg = R.urg || 0, it = R
  var d = new URLSearchParams(); Object.keys(lead).forEach(function(k){ d.append(k, lead[k]); });
  var env = false; try { env = !!(navigator.sendBeacon && navigator.sendBeacon(cfg.webhookUrl, d)); } catch(e){}
  if (!env) { try { fetch(cfg.webhookUrl, {method:'POST', mode:'no-cors', body:d, keepalive:true}); } catch(e){} }
- setTimeout(function(){ location.href = url.toString(); }, 400); }
+ setTimeout(function(){ location.href = url.toString(); }, 1000); }
 </script>
 </body>
 </html>
